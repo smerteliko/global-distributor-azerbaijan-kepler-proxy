@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: Global Distributor Azerbaijan - Kepler Integration Proxy
+
+  messages:
+    basename: messages
+    encoding: UTF-8
+
+  web:
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/swagger/
+
+
+server:
+  port: 8080
+
+kepler:
+  api:
+    base-url: https://api.kepler.az/v2
+    graphql-url: https://api.kepler.az/graphql
+  api-key: ${KEPLER_API_KEY:default_api_key}
+
+springdoc:
+  api-docs:
+    groups:
+      enabled: true
+    path: /docs
+    version: openapi_3_1
+  swagger-ui:
+
+    enabled: true
+  allowed-locales:
+    - en
+    - ru
+
+
