@@ -17,7 +17,6 @@ public interface RefinedProductsProxyService {
      */
     Mono<List<RefinedProductsModel>> getRefinedProductsSupply(
         String authorizationHeader,
-        String granularity,
         RefinedProductsRequestModel requestModel
     );
 }

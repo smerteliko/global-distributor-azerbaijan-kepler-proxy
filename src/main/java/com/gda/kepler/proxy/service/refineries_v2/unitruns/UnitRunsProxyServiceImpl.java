@@ -29,10 +29,8 @@ final public class UnitRunsProxyServiceImpl extends BaseRefineriesProxyService i
         new ParameterizedTypeReference<List<UnitRunsModel>>() {};
 
 
-    public UnitRunsProxyServiceImpl(WebClient.Builder webClientBuilder,
-                                    @Value("${kepler.api-key}") String keplerApiKey,
-                                    @Value("${kepler.api.base-url}") String keplerBaseUrl) {
-        super(webClientBuilder, keplerApiKey, keplerBaseUrl);
+    public UnitRunsProxyServiceImpl(WebClient.Builder webClientBuilder) {
+        super(webClientBuilder);
     }
 
     /**
@@ -42,7 +40,6 @@ final public class UnitRunsProxyServiceImpl extends BaseRefineriesProxyService i
     public Mono<List<UnitRunsModel>> getPrimaryDistillationRuns(
         String authorizationHeader,
         String granularity,
-        List<String> splits,
         List<String> crudeGrades,
         List<String> crudeQualities,
         UnitRunsRequestModel requestModel

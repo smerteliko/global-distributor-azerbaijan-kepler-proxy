@@ -17,7 +17,6 @@ public interface CrudeQualityProxyService {
      */
     Mono<List<CrudeQualityModel>> getCrudeQuality(
         String authorizationHeader,
-        String granularity,
         CrudeQualityRequestModel requestModel
     );
 }

@@ -31,10 +31,8 @@ final public class ImportsProxyServiceImpl extends BaseRefineriesProxyService im
         new ParameterizedTypeReference<List<ImportsOtherFeedstockModel>>() {};
 
 
-    public ImportsProxyServiceImpl(WebClient.Builder webClientBuilder,
-                                   @Value("${kepler.api-key}") String keplerApiKey,
-                                   @Value("${kepler.api.base-url}") String keplerBaseUrl) {
-        super(webClientBuilder, keplerApiKey, keplerBaseUrl);
+    public ImportsProxyServiceImpl(WebClient.Builder webClientBuilder) {
+        super(webClientBuilder);
     }
 
 
@@ -45,13 +43,12 @@ final public class ImportsProxyServiceImpl extends BaseRefineriesProxyService im
     @Override
     public Mono<List<ImportsCrudeCoModel>> getImportsCrudeCo(
         String authorizationHeader,
-        String granularity,
         ImportsCrudeCoRequestModel requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(CRUDE_CO_PATH);
 
         // Required parameter
-        uriBuilder.queryParam("granularity", granularity);
+        uriBuilder.queryParam("granularity", requestModel.getGranularity());
 
         // Specific parameters
         Optional.ofNullable(requestModel.getUnit()).ifPresent(u -> uriBuilder.queryParam("unit", u));
@@ -72,13 +69,12 @@ final public class ImportsProxyServiceImpl extends BaseRefineriesProxyService im
     @Override
     public Mono<List<ImportsOtherFeedstockModel>> getImportsOtherFeedstock(
         String authorizationHeader,
-        String granularity,
         ImportsOtherFeedstockRequestModel requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(OTHER_FEEDSTOCK_PATH);
 
         // Required parameter
-        uriBuilder.queryParam("granularity", granularity);
+        uriBuilder.queryParam("granularity", requestModel.getGranularity());
 
         // Specific parameters
         Optional.ofNullable(requestModel.getUnit()).ifPresent(u -> uriBuilder.queryParam("unit", u));

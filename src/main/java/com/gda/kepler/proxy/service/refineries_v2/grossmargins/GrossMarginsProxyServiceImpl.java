@@ -27,10 +27,8 @@ final public class GrossMarginsProxyServiceImpl extends BaseRefineriesProxyServi
         new ParameterizedTypeReference<List<GrossMarginsModel>>() {};
 
 
-    public GrossMarginsProxyServiceImpl(WebClient.Builder webClientBuilder,
-                                        @Value("${kepler.api-key}") String keplerApiKey,
-                                        @Value("${kepler.api.base-url}") String keplerBaseUrl) {
-        super(webClientBuilder, keplerApiKey, keplerBaseUrl);
+    public GrossMarginsProxyServiceImpl(WebClient.Builder webClientBuilder) {
+        super(webClientBuilder);
     }
 
 
@@ -41,13 +39,12 @@ final public class GrossMarginsProxyServiceImpl extends BaseRefineriesProxyServi
     @Override
     public Mono<List<GrossMarginsModel>> getGrossMargins(
         String authorizationHeader,
-        String granularity,
         GrossMarginsRequestModel requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(GROSS_MARGINS_PATH);
 
 
-        uriBuilder.queryParam("granularity", granularity);
+        uriBuilder.queryParam("granularity", requestModel.getGranularity());
 
         Optional.ofNullable(requestModel.getSplits()).filter(l -> !l.isEmpty()).ifPresent(s -> uriBuilder.queryParam("splits", String.join(",", s)));
 

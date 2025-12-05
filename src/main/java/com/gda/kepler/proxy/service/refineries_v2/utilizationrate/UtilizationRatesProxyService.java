@@ -23,8 +23,6 @@ public interface UtilizationRatesProxyService {
      */
     Mono<List<UtilisationRatesModel>> getUtilizationRates(
         String authorizationHeader,
-        String granularity,
-        String unitType,
         UtilizationRatesRequestModel requestModel
     );
 }

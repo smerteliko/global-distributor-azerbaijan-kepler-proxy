@@ -80,7 +80,19 @@ public class OpenApiI18nConfig {
             .displayName("Refineries")
             .pathsToMatch("/v2/refineries/**")
             .addOpenApiCustomizer(
-                createCustomizer(messageSource, new Locale("ru"), "Refineries")
+                createCustomizer(messageSource, new Locale("en"), "Refineries")
+            )
+            .build();
+    }
+
+    @Bean
+    public GroupedOpenApi Marinetraffic(MessageSource messageSource) {
+        return GroupedOpenApi.builder()
+            .group("Marinetraffic")
+            .displayName("Marinetraffic")
+            .pathsToMatch("/marinetraffic/**")
+            .addOpenApiCustomizer(
+                createCustomizer(messageSource, new Locale("en"), "MarineTraffic")
             )
             .build();
     }

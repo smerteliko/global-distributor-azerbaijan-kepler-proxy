@@ -23,10 +23,8 @@ final public class ConsumptionProxyServiceImpl extends BaseRefineriesProxyServic
         new ParameterizedTypeReference<List<ConsumptionModel>>() {};
 
 
-    public ConsumptionProxyServiceImpl(WebClient.Builder webClientBuilder,
-                                       @Value("${kepler.api-key}") String keplerApiKey,
-                                       @Value("${kepler.api.base-url}") String keplerBaseUrl) {
-        super(webClientBuilder, keplerApiKey, keplerBaseUrl);
+    public ConsumptionProxyServiceImpl(WebClient.Builder webClientBuilder) {
+        super(webClientBuilder);
     }
 
     /**
@@ -45,12 +43,11 @@ final public class ConsumptionProxyServiceImpl extends BaseRefineriesProxyServic
     @Override
     public Mono<List<ConsumptionModel>> getConsumptionOtherFeedstock(
         String authorizationHeader,
-        String granularity,
         ConsumptionRequestModel requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(OTHER_FEEDSTOCK_PATH);
 
-        uriBuilder.queryParam("granularity", granularity);
+        uriBuilder.queryParam("granularity", requestModel.getGranularity());
 
         this.addBaseQueryParams(uriBuilder, requestModel);
 

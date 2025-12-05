@@ -27,10 +27,8 @@ final public class RefineriesProxyServiceImpl extends BaseRefineriesProxyService
         new ParameterizedTypeReference<List<ParticularModel>>() {};
 
 
-    public RefineriesProxyServiceImpl(WebClient.Builder webClientBuilder,
-                                      @Value("${kepler.api-key}") String keplerApiKey,
-                                      @Value("${kepler.api.base-url}") String keplerBaseUrl) {
-        super(webClientBuilder, keplerApiKey, keplerBaseUrl);
+    public RefineriesProxyServiceImpl(WebClient.Builder webClientBuilder) {
+        super(webClientBuilder);
     }
 
     @Override

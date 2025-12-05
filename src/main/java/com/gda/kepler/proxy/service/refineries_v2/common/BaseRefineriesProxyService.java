@@ -13,8 +13,8 @@ import java.util.Optional;
  * This class handles common logic like dynamic date defaults and generic filter application.
  */
 public abstract class BaseRefineriesProxyService extends KeplerProxyService {
-    public BaseRefineriesProxyService(WebClient.Builder webClientBuilder, String keplerApiKey, String keplerBaseUrl) {
-        super(webClientBuilder, keplerApiKey, keplerBaseUrl);
+    public BaseRefineriesProxyService(WebClient.Builder webClientBuilder) {
+        super(webClientBuilder);
     }
 
     /**

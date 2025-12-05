@@ -25,10 +25,8 @@ final public class UtilizationRatesProxyServiceImpl extends KeplerProxyService i
         new ParameterizedTypeReference<List<UtilisationRatesModel>>() {};
 
 
-    public UtilizationRatesProxyServiceImpl(WebClient.Builder webClientBuilder,
-                                            @Value("${kepler.api-key}") String keplerApiKey,
-                                            @Value("${kepler.api.base-url}") String keplerBaseUrl) {
-        super(webClientBuilder, keplerApiKey, keplerBaseUrl);
+    public UtilizationRatesProxyServiceImpl(WebClient.Builder webClientBuilder) {
+        super(webClientBuilder);
     }
 
     /**
@@ -60,17 +58,15 @@ final public class UtilizationRatesProxyServiceImpl extends KeplerProxyService i
     @Override
     public Mono<List<UtilisationRatesModel>> getUtilizationRates(
         String authorizationHeader,
-        String granularity,
-        String unitType, // Optional, defaults to Primary Distillation
         UtilizationRatesRequestModel requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(UTILIZATION_RATES_PATH);
 
         // Required parameter
-        uriBuilder.queryParam("granularity", granularity);
+        uriBuilder.queryParam("granularity", requestModel.getGranularity());
 
         // Optional parameters (unitType defaults to 'Primary Distillation' in controller)
-        Optional.ofNullable(unitType).ifPresent(ut -> uriBuilder.queryParam("unitType", ut));
+        Optional.ofNullable(requestModel.getUnitType()).ifPresent(ut -> uriBuilder.queryParam("unitType", ut));
 
         // Splits (Optional, defaults to 'total' in controller)
         Optional.ofNullable(requestModel.getSplits()).filter(l -> !l.isEmpty()).ifPresent(s -> uriBuilder.queryParam("splits", String.join(",", s)));

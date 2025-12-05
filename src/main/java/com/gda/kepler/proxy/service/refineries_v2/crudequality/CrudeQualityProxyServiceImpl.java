@@ -25,10 +25,8 @@ final public class CrudeQualityProxyServiceImpl extends BaseRefineriesProxyServi
         new ParameterizedTypeReference<List<CrudeQualityModel>>() {};
 
 
-    public CrudeQualityProxyServiceImpl(WebClient.Builder webClientBuilder,
-                                        @Value("${kepler.api-key}") String keplerApiKey,
-                                        @Value("${kepler.api.base-url}") String keplerBaseUrl) {
-        super(webClientBuilder, keplerApiKey, keplerBaseUrl);
+    public CrudeQualityProxyServiceImpl(WebClient.Builder webClientBuilder) {
+        super(webClientBuilder);
     }
 
 
@@ -38,12 +36,11 @@ final public class CrudeQualityProxyServiceImpl extends BaseRefineriesProxyServi
     @Override
     public Mono<List<CrudeQualityModel>> getCrudeQuality(
         String authorizationHeader,
-        String granularity,
         CrudeQualityRequestModel requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(CRUDE_QUALITY_PATH);
 
-        uriBuilder.queryParam("granularity", granularity);
+        uriBuilder.queryParam("granularity", requestModel.getGranularity());
 
         this.addBaseQueryParams(uriBuilder, requestModel);
 

@@ -17,7 +17,6 @@ public interface ConsumptionProxyService {
      */
     Mono<List<ConsumptionModel>> getConsumptionOtherFeedstock(
         String authorizationHeader,
-        String granularity,
         ConsumptionRequestModel requestModel
     );
 }

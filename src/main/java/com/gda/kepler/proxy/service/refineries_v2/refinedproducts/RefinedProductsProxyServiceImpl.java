@@ -28,10 +28,8 @@ final public class RefinedProductsProxyServiceImpl extends BaseRefineriesProxySe
         };
 
 
-    public RefinedProductsProxyServiceImpl(WebClient.Builder webClientBuilder,
-                                           @Value("${kepler.api-key}") String keplerApiKey,
-                                           @Value("${kepler.api.base-url}") String keplerBaseUrl) {
-        super(webClientBuilder, keplerApiKey, keplerBaseUrl);
+    public RefinedProductsProxyServiceImpl(WebClient.Builder webClientBuilder) {
+        super(webClientBuilder);
     }
 
     /**
@@ -40,12 +38,11 @@ final public class RefinedProductsProxyServiceImpl extends BaseRefineriesProxySe
     @Override
     public Mono<List<RefinedProductsModel>> getRefinedProductsSupply(
         String authorizationHeader,
-        String granularity,
         RefinedProductsRequestModel requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(REFINED_PRODUCTS_SUPPLY_PATH);
 
-        uriBuilder.queryParam("granularity", granularity);
+        uriBuilder.queryParam("granularity", requestModel.getGranularity());
 
         Optional.ofNullable(requestModel.getUnit()).ifPresent(u -> uriBuilder.queryParam("unit", u));
         Optional.ofNullable(requestModel.getSplits()).filter(l -> !l.isEmpty()).ifPresent(s -> uriBuilder.queryParam("splits", String.join(",", s)));

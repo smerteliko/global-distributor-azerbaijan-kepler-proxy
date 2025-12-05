@@ -21,7 +21,6 @@ public interface UnitRunsProxyService {
     Mono<List<UnitRunsModel>> getPrimaryDistillationRuns(
         String authorizationHeader,
         String granularity,
-        List<String> splits,
         List<String> crudeGrades,
         List<String> crudeQualities,
         UnitRunsRequestModel requestModel

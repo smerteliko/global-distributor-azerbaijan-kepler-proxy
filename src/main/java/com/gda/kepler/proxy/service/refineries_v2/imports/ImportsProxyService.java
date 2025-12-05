@@ -15,7 +15,6 @@ public interface ImportsProxyService {
      */
     Mono<List<ImportsCrudeCoModel>> getImportsCrudeCo(
         String authorizationHeader,
-        String granularity,
         ImportsCrudeCoRequestModel requestModel
     );
 
@@ -24,7 +23,6 @@ public interface ImportsProxyService {
      */
     Mono<List<ImportsOtherFeedstockModel>> getImportsOtherFeedstock(
         String authorizationHeader,
-        String granularity,
         ImportsOtherFeedstockRequestModel requestModel
     );
 }

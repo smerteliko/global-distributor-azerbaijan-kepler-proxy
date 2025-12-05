@@ -35,6 +35,8 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.tags.Tags;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -90,7 +92,7 @@ public class RefineriesController {
         @RequestHeader(name = HttpHeaders.AUTHORIZATION, required = true)
         @Parameter(description = "Authorization header (Bearer token) for Kepler API")
         String authorizationHeader,
-        ParticularRequestModel requestModel
+        @ParameterObject ParticularRequestModel requestModel
     ) {
         return refineriesProxyService.getParticulars(
                 authorizationHeader,
@@ -118,7 +120,7 @@ public class RefineriesController {
             @ApiResponse(
                 responseCode = "200",
                 description = "Successful Response",
-                content = @Content(array = @ArraySchema(schema = @Schema(implementation = BaseDateSplitOutputModel.class)))
+                content = @Content(array = @ArraySchema(schema = @Schema(implementation = UnitRunsModel.class)))
             ),
             @ApiResponse(
                 responseCode = "422",
@@ -139,10 +141,6 @@ public class RefineriesController {
             schema = @Schema(allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"}))
         String granularity,
 
-        // Optional list parameter with API default value 'total'
-        @RequestParam(required = false, defaultValue = "total")
-        @Parameter(description = "Field names to use on aggregation (defaults to 'total' if omitted).")
-        List<String> splits,
 
         // Optional list parameters with no API default value (empty list is default)
         @RequestParam(required = false)
@@ -154,13 +152,12 @@ public class RefineriesController {
         List<String> crudeQualities,
 
         // requestModel contains optional unit (defaults to kbd), startDate/endDate (dynamic defaults), zones, installations, players.
-        @RequestParam(required = false, defaultValue = "kbd")
+        @ParameterObject
         UnitRunsRequestModel requestModel
     ) {
         return unitRunsProxyService.getPrimaryDistillationRuns(
                 authorizationHeader,
                 granularity,
-                splits,
                 crudeGrades,
                 crudeQualities,
                 requestModel
@@ -178,15 +175,15 @@ public class RefineriesController {
      * Proxies the GET request to Kepler API: /refineries/unit-runs/secondary-units
      */
     @GetMapping("/unit-runs/secondary-units")
-    @Tag(name = "Unit Runs")
     @Operation(
+        tags = {"Unit Runs"},
         summary = "Proxy: Read Secondary Units Runs",
         description = "Retrieves operational run data of Secondary Units. Granularity and unitType are required.",
         responses = {
             @ApiResponse(
                 responseCode = "200",
                 description = "Successful Response",
-                content = @Content(array = @ArraySchema(schema = @Schema(implementation = BaseDateSplitOutputModel.class)))
+                content = @Content(array = @ArraySchema(schema = @Schema(implementation = UnitRunsModel.class)))
             ),
             @ApiResponse(
                 responseCode = "422",
@@ -218,7 +215,7 @@ public class RefineriesController {
         List<String> splits,
 
         // requestModel contains optional unit (defaults to kbd), startDate/endDate (dynamic defaults), zones, installations, players.
-        @RequestParam(required = false, defaultValue = "kbd")
+        @ParameterObject
         UnitRunsRequestModel requestModel
     ) {
         return unitRunsProxyService.getSecondaryUnitsRuns(
@@ -241,7 +238,7 @@ public class RefineriesController {
      * Proxies the GET request to Kepler API: /refineries/utilization-rates
      */
     @GetMapping("/utilization-rates")
-    @Tag(name = "Utilization Rates")
+    @Tag(name = "Utilization Rates",  description = "asdf")
     @Operation(
         summary = "Proxy: Read Utilization Rates",
         description = "Returns the available utilization rate for the chosen unit type. Granularity is required.",
@@ -265,22 +262,11 @@ public class RefineriesController {
         @Parameter(description = "Authorization header (Bearer token) for Kepler API")
         String authorizationHeader,
 
-        @RequestParam(required = true)
-        @Parameter(description = "Time series aggregation (monthly, daily, weekly, etc.)", example = "monthly",
-            schema = @Schema(allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"}))
-        String granularity,
-
-        @RequestParam(required = false, defaultValue = "Primary Distillation")
-        @Parameter(description = "Refinery unit name (Reformer, Coker, FCC, Distillate Hydrocracker, Primary Distillation)", example = "Primary Distillation",
-            schema = @Schema(allowableValues = {"Reformer", "Coker", "FCC", "Distillate Hydrocracker", "Primary Distillation"}))
-        String unitType,
-
+        @ParameterObject
         UtilizationRatesRequestModel requestModel
     ) {
         return utilizationRatesProxyService.getUtilizationRates(
                 authorizationHeader,
-                granularity,
-                unitType,
                 requestModel
             )
             .map(ResponseEntity::ok)
@@ -297,7 +283,7 @@ public class RefineriesController {
      * Proxies the GET request to Kepler API: /refineries/margins
      */
     @GetMapping("/margins")
-    @Tag(name = "Gross Margins")
+    @Tag(name = "Gross Margins",  description = "asdf")
     @Operation(
         summary = "Proxy: Read Gross Margins",
         description = "Returns the Gross Margin per unit volume. Granularity is required.",
@@ -320,17 +306,11 @@ public class RefineriesController {
         @RequestHeader(name = HttpHeaders.AUTHORIZATION, required = true)
         @Parameter(description = "Authorization header (Bearer token) for Kepler API")
         String authorizationHeader,
-
-        @RequestParam(required = true)
-        @Parameter(description = "Time series aggregation (monthly, daily, weekly, etc.)", example = "daily",
-            schema = @Schema(allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"}))
-        String granularity,
-
+        @ParameterObject
         GrossMarginsRequestModel requestModel
     ) {
         return grossMarginsProxyService.getGrossMargins(
                 authorizationHeader,
-                granularity,
                 requestModel
             )
             .map(ResponseEntity::ok)
@@ -348,7 +328,7 @@ public class RefineriesController {
      * Proxies the GET request to Kepler API: /refineries/refined-products-supply
      */
     @GetMapping("/refined-products-supply")
-    @Tag(name = "Refined Products Supply")
+    @Tag(name = "Refined Products Supply", description = "asdf")
     @Operation(
         summary = "Proxy: Read Refined Products Supply",
         description = "Returns the aggregated production of each refined product. Granularity is required.",
@@ -371,18 +351,11 @@ public class RefineriesController {
         @RequestHeader(name = HttpHeaders.AUTHORIZATION, required = true)
         @Parameter(description = "Authorization header (Bearer token) for Kepler API")
         String authorizationHeader,
-
-        @RequestParam(required = true)
-        @Parameter(description = "Time series aggregation (monthly, daily, weekly, etc.)", example = "monthly",
-            schema = @Schema(allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"}))
-        String granularity,
-
-        @RequestParam(required = false, defaultValue = "kbd")
+        @ParameterObject
         RefinedProductsRequestModel requestModel
     ) {
         return refinedProductsProxyService.getRefinedProductsSupply(
                 authorizationHeader,
-                granularity,
                 requestModel
             )
             .map(ResponseEntity::ok)
@@ -400,7 +373,7 @@ public class RefineriesController {
      * Proxies the GET request to Kepler API: /refineries/imports/crude-co
      */
     @GetMapping("/imports/crude-co")
-    @Tag(name = "Imports")
+    @Tag(name = "Imports", description = "asdf")
     @Operation(
         summary = "Proxy: Read Crude Oil and Condensate Imports",
         description = "Retrieves import data for crude oil and condensate. Granularity is required.",
@@ -424,17 +397,11 @@ public class RefineriesController {
         @Parameter(description = "Authorization header (Bearer token) for Kepler API")
         String authorizationHeader,
 
-        @RequestParam(required = true)
-        @Parameter(description = "Time series aggregation (monthly, daily, weekly, etc.)", example = "monthly",
-            schema = @Schema(allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"}))
-        String granularity,
-
-        @RequestParam(required = false, defaultValue = "kbd")
+        @ParameterObject
         ImportsCrudeCoRequestModel requestModel
     ) {
         return importsProxyService.getImportsCrudeCo(
                 authorizationHeader,
-                granularity,
                 requestModel
             )
             .map(ResponseEntity::ok)
@@ -452,8 +419,8 @@ public class RefineriesController {
      * Proxies the GET request to Kepler API: /refineries/imports/other-feedstock
      */
     @GetMapping("/imports/other-feedstock")
-    @Tag(name = "Imports")
     @Operation(
+        tags = {"Imports"},
         summary = "Proxy: Read Other Feedstock Imports",
         description = "Retrieves import data for other feedstocks (SRFO, HSFO, VGO). Granularity is required.",
         responses = {
@@ -476,17 +443,11 @@ public class RefineriesController {
         @Parameter(description = "Authorization header (Bearer token) for Kepler API")
         String authorizationHeader,
 
-        @RequestParam(required = true)
-        @Parameter(description = "Time series aggregation (monthly, daily, weekly, etc.)", example = "monthly",
-            schema = @Schema(allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"}))
-        String granularity,
-
         @RequestParam(required = false, defaultValue = "kbd")
         ImportsOtherFeedstockRequestModel requestModel
     ) {
         return importsProxyService.getImportsOtherFeedstock(
                 authorizationHeader,
-                granularity,
                 requestModel
             )
             .map(ResponseEntity::ok)
@@ -503,7 +464,7 @@ public class RefineriesController {
      * Proxies the GET request to Kepler API: /refineries/crude-quality
      */
     @GetMapping("/crude-quality")
-    @Tag(name = "Crude Quality")
+    @Tag(name = "Crude Quality",  description = "asdf")
     @Operation(
         summary = "Proxy: Read Crude Quality",
         description = "Returns the volume weighted average API gravity and sulfur content of the crude slate. Granularity is required.",
@@ -527,16 +488,11 @@ public class RefineriesController {
         @Parameter(description = "Authorization header (Bearer token) for Kepler API")
         String authorizationHeader,
 
-        @RequestParam(required = true)
-        @Parameter(description = "Time series aggregation (monthly, daily, weekly, etc.)", example = "monthly",
-            schema = @Schema(allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"}))
-        String granularity,
-
+        @ParameterObject
         CrudeQualityRequestModel requestModel
     ) {
         return crudeQualityProxyService.getCrudeQuality(
                 authorizationHeader,
-                granularity,
                 requestModel
             )
             .map(ResponseEntity::ok)
@@ -553,7 +509,7 @@ public class RefineriesController {
      * Proxies the GET request to Kepler API: /refineries/consumption/other-feedstock
      */
     @GetMapping("/consumption/other-feedstock")
-    @Tag(name = "Consumption")
+    @Tag(name = "Consumption",  description = "asdf")
     @Operation(
         summary = "Proxy: Read Other Feedstock Consumption",
         description = "Returns the amount of imported other feedstocks consumed by the selected refinery. Granularity is required.",
@@ -577,17 +533,11 @@ public class RefineriesController {
         @Parameter(description = "Authorization header (Bearer token) for Kepler API")
         String authorizationHeader,
 
-        @RequestParam(required = true)
-        @Parameter(description = "Time series aggregation (monthly, daily, weekly, etc.)", example = "monthly",
-            schema = @Schema(allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"}))
-        String granularity,
-
-        @RequestParam(required = false, defaultValue = "kbd")
+        @ParameterObject
         ConsumptionRequestModel requestModel
     ) {
         return consumptionProxyService.getConsumptionOtherFeedstock(
                 authorizationHeader,
-                granularity,
                 requestModel
             )
             .map(ResponseEntity::ok)

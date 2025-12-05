@@ -20,6 +20,11 @@ kepler:
     graphql-url: https://api.kepler.az/graphql
   api-key: ${KEPLER_API_KEY:default_api_key}
 
+marinetraffic:
+  api:
+    base-url: https://services.marinetraffic.com/api
+  api-key: ${KEPLER_MARINE_TRAFFIC_API_KEY:default_api_key}
+
 springdoc:
   api-docs:
     groups:
@@ -27,10 +32,8 @@ springdoc:
     path: /docs
     version: openapi_3_1
   swagger-ui:
-
     enabled: true
   allowed-locales:
     - en
     - ru
-
 

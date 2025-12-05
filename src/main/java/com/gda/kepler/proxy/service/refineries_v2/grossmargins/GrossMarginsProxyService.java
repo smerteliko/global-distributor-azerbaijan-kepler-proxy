@@ -17,7 +17,6 @@ public interface GrossMarginsProxyService {
      */
     Mono<List<GrossMarginsModel>> getGrossMargins(
         String authorizationHeader,
-        String granularity,
         GrossMarginsRequestModel requestModel
     );
 }

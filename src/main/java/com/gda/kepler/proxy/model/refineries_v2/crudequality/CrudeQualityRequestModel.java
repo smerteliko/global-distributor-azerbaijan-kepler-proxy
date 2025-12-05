@@ -16,6 +16,14 @@ import java.util.List;
 @Schema(description = "Request model specific to Crude Quality endpoint.")
 final public class CrudeQualityRequestModel extends BaseTimeSeriesRequestModel {
 
+    @Parameter(description = "Time series aggregation (monthly, daily, weekly, etc.)", example = "monthly", required = true,
+        schema = @Schema(
+            allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"},
+            requiredMode = Schema.RequiredMode.REQUIRED
+        )
+    )
+    String granularity;
+
     @Parameter(description = "Field names to use on aggregation (e.g., total, refinery types, countries). Default: total.")
     List<String> splits;
 }

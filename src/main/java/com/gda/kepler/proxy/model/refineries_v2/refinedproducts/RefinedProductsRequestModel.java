@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -47,4 +48,8 @@ final public class RefinedProductsRequestModel extends BaseTimeSeriesRequestMode
         })
     )
     List<String> products;
+
+    @Parameter(description = "Time series aggregation (monthly, daily, weekly, etc.)", example = "monthly", required = true,
+        schema = @Schema(allowableValues = {"monthly", "daily", "weekly", "eia-weekly", "yearly", "quarterly"},requiredMode = Schema.RequiredMode.REQUIRED))
+    String granularity;
 }
