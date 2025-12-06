@@ -9,9 +9,7 @@ import java.time.LocalDateTime;
 import lombok.*;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "Simple")
 public class SingleVesselPortCallsSimpleResponse extends BaseSingleVesselPortCallsResponse {

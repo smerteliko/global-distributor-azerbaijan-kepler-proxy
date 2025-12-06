@@ -5,24 +5,20 @@ import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessel.SingleVesselPos
 import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessel.SingleVesselPositionsResponse;
 import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels.VesselPositionsRequest;
 import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels.VesselPositionsResponse;
-import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestRequest;
-import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestResponse;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvesselscustomarea.VesselPositionsInAnAreaOfInterestRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvesselscustomarea.VesselPositionsInAnAreaOfInterestResponse;
 import com.gda.kepler.proxy.service.marinetraffic.ais.singlevessel.SingleVesselPositionsService;
 import com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositions.VesselPositionsService;
 import com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositionscustomarea.VesselPositionsCustomAreaService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.Valid;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
@@ -68,13 +64,13 @@ public class MarinTrafficController {
         responses = {
             @ApiResponse(
                 responseCode = "200",
-                description = "{successful.response.description}",
+                description = "successful.response.description",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                     schema = @Schema(implementation = SingleVesselPositionsResponse.class))
             ),
             @ApiResponse(
                 responseCode = "429",
-                description = "{too.many.requests.description}",
+                description = "too.many.requests.description",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                     schema = @Schema(implementation = KeplerError.class))
             )
@@ -106,13 +102,13 @@ public class MarinTrafficController {
         responses = {
             @ApiResponse(
                 responseCode = "200",
-                description = "{successful.response.description}",
+                description = "successful.response.description",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                     schema = @Schema(implementation = VesselPositionsResponse.class))
             ),
             @ApiResponse(
                 responseCode = "429",
-                description = "{too.many.requests.description}",
+                description = "too.many.requests.description",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                     schema = @Schema(implementation = KeplerError.class))
             )
@@ -136,19 +132,19 @@ public class MarinTrafficController {
     @Tag(name = "ais.api.tag.name", description = "doc.tag.aisapi.MarineTraffic")
     @Operation(
         operationId = "exportvessels-custom-area",
-        summary = "{vessel.positions.summary}",
-        description = "{vessel.positions.description}",
+        summary = "vessel.positions.summary",
+        description = "vessel.positions.description",
 
         responses = {
             @ApiResponse(
                 responseCode = "200",
-                description = "{successful.response.description}",
+                description = "successful.response.description",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                     schema = @Schema(implementation = VesselPositionsInAnAreaOfInterestResponse.class))
             ),
             @ApiResponse(
                 responseCode = "429",
-                description = "{too.many.requests.description}",
+                description = "too.many.requests.description",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                     schema = @Schema(implementation = KeplerError.class))
             )

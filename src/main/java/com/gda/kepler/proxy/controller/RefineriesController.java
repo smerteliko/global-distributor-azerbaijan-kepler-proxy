@@ -47,7 +47,7 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v2/refineries")
+@RequestMapping("/refineries/v2")
 public class RefineriesController {
 
 

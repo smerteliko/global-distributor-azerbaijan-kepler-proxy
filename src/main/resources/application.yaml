@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Global Distributor Azerbaijan - Kepler Integration Proxy
+    name: GDA Knowledge - Kepler Integration Proxy
 
   messages:
     basename: messages

@@ -9,7 +9,9 @@ import java.time.LocalDateTime;
 import lombok.*;
 
 @Data
-@Builder
+@EqualsAndHashCode(callSuper = true)
+
+
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)

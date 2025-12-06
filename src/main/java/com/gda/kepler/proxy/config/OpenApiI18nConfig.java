@@ -41,16 +41,16 @@ public class OpenApiI18nConfig {
     public OpenAPI openAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("Knowledge direct API")
+                .title("Global Distributor Azerbaijan Knowledge API")
                 .version("1.0")
-                .description("API documentation for Knowledge direct API")
+                .description("API documentation for Global Distributor Azerbaijan Knowledge API")
                 .contact(new Contact()
                     .name("Support")
                     .email("nikolay.alex.makarov@gmail.com")
                 )
-                .summary("API documentation for Knowledge direct API")
+                .summary("API documentation for Global Distributor Azerbaijan Knowledge API")
                 .termsOfService("http://localhost:8080/terms-of-service.html")
-                .license(new License().name("Knowledge direct API").url("http://localhost:8080/license.html"))
+                .license(new License().name("GDA Knowledge API").url("http://localhost:8080/license.html"))
             );
     }
 
@@ -78,7 +78,7 @@ public class OpenApiI18nConfig {
         return GroupedOpenApi.builder()
             .group("Refineries")
             .displayName("Refineries")
-            .pathsToMatch("/v2/refineries/**")
+            .pathsToMatch("/refineries/v2/**")
             .addOpenApiCustomizer(
                 createCustomizer(messageSource, new Locale("en"), "Refineries")
             )
@@ -106,10 +106,10 @@ public class OpenApiI18nConfig {
                 .summary(messageSource.getMessage("doc.summary." + groupName, null, locale))
                 .contact(new Contact()
                     .name("Support")
-                    .email("nikolay.alex.makarov@gmail.com")
+                    .email("support@globaldistributor.org")
                 )
                 .termsOfService("http://localhost:8080/terms-of-service.html")
-                .license(new License().name("Knowledge direct API").url("http://localhost:8080/license.html"))
+                .license(new License().name("GDA Knowledge API").url("http://localhost:8080/license.html"))
             );
 
             openApi.getTags().forEach(tag -> {

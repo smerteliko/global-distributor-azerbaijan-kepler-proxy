@@ -8,7 +8,7 @@ import java.util.List;
 import lombok.*;
 
 @Data
-@Builder
+
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,7 +21,7 @@ public class MissingShipIdentifierError {
 
 
     @Data
-    @Builder
+    
     @NoArgsConstructor
     @AllArgsConstructor
     @JsonInclude(JsonInclude.Include.NON_NULL)

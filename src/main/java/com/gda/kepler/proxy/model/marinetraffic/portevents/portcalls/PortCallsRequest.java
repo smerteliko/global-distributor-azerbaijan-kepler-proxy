@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import lombok.*;
 
 @Data
-@Builder
+
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)

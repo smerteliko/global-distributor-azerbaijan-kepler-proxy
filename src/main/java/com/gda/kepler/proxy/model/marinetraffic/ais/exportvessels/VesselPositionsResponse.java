@@ -12,7 +12,6 @@ import java.util.List;
 import lombok.*;
 
 @Data
-@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "Default")
 public class VesselPositionsResponse {

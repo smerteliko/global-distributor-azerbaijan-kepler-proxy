@@ -1,9 +1,8 @@
 package com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositionscustomarea;
 
-import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestRequest;
-import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestResponse;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvesselscustomarea.VesselPositionsInAnAreaOfInterestRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvesselscustomarea.VesselPositionsInAnAreaOfInterestResponse;
 import com.gda.kepler.proxy.service.base.KeplerProxyService;
-import com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositions.VesselPositionsService;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;

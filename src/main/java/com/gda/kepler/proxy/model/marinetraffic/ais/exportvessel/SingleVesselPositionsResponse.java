@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 import lombok.*;
 
 @Data
-@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "Default")
 public class SingleVesselPositionsResponse extends BaseDataResponse {
