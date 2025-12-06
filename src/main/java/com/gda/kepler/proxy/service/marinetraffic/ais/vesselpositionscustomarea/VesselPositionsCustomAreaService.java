@@ -1,7 +1,7 @@
 package com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositionscustomarea;
 
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositionscustomarea.VesselPositionsCustomAreaModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositionscustomarea.VesselPositionsCustomAreaRequestModel;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestResponse;
 import reactor.core.publisher.Mono;
 
 /**
@@ -14,7 +14,7 @@ public interface VesselPositionsCustomAreaService {
      * @param requestModel Request model with filtering parameters.
      * @return Mono emitting the paginated vessel position data.
      */
-    Mono<VesselPositionsCustomAreaModel> getVesselPositionsCustomArea(
-        VesselPositionsCustomAreaRequestModel requestModel
+    Mono<VesselPositionsInAnAreaOfInterestResponse> getVesselPositionsCustomArea(
+        VesselPositionsInAnAreaOfInterestRequest requestModel
     );
 }

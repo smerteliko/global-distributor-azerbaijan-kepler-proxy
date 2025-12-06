@@ -1,7 +1,7 @@
 package com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositions;
 
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositions.VesselPositionsModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositions.VesselPositionsRequestModel;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels.VesselPositionsRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels.VesselPositionsResponse;
 import com.gda.kepler.proxy.service.base.KeplerProxyService;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
@@ -22,8 +22,8 @@ public class VesselPositionsServiceImpl extends KeplerProxyService implements Ve
     private static final String ENDPOINT_PATH = "/exportvessels/{apiKey}";
 
     // Defines the expected response type for API deserialization.
-    private static final ParameterizedTypeReference<VesselPositionsModel> RESPONSE_TYPE =
-        new ParameterizedTypeReference<VesselPositionsModel>() {};
+    private static final ParameterizedTypeReference<VesselPositionsResponse> RESPONSE_TYPE =
+        new ParameterizedTypeReference<VesselPositionsResponse>() {};
 
     /**
      * Constructor using the base class constructor to initialize WebClients.
@@ -39,14 +39,14 @@ public class VesselPositionsServiceImpl extends KeplerProxyService implements Ve
      * @return Mono emitting the paginated vessel position data from the external API.
      */
     @Override
-    public Mono<VesselPositionsModel> getVesselPositions(
-        VesselPositionsRequestModel requestModel
+    public Mono<VesselPositionsResponse> getVesselPositions(
+        VesselPositionsRequest requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(ENDPOINT_PATH)
             .path(ENDPOINT_PATH.replace("{apiKey}",  this.marinetrafficApiKey));
         uriBuilder.queryParam("v", requestModel.getV());
 
-        Optional.ofNullable(requestModel.getVesseltypeid()).ifPresent(vtid -> uriBuilder.queryParam("vesseltypeid", vtid));
+        Optional.ofNullable(requestModel.getVesselTypeId()).ifPresent(vtid -> uriBuilder.queryParam("vesseltypeid", vtid));
         Optional.ofNullable(requestModel.getTimespan()).ifPresent(ts -> uriBuilder.queryParam("timespan", ts));
         Optional.ofNullable(requestModel.getCursor()).ifPresent(c -> uriBuilder.queryParam("cursor", c));
         Optional.ofNullable(requestModel.getLimit()).ifPresent(l -> uriBuilder.queryParam("limit", l));

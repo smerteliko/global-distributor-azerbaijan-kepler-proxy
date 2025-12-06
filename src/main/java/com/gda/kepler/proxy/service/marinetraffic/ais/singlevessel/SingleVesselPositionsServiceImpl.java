@@ -1,11 +1,8 @@
 package com.gda.kepler.proxy.service.marinetraffic.ais.singlevessel;
 
-import com.gda.kepler.proxy.model.marinetraffic.ais.singlevessel.SingleVesselPositionModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.singlevessel.SingleVesselPositionsRequestModel;
-import com.gda.kepler.proxy.model.marinetraffic.common.BaseVesselPositionDataModel;
-import com.gda.kepler.proxy.model.refineries_v2.consumption.ConsumptionModel;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessel.SingleVesselPositionsRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessel.SingleVesselPositionsResponse;
 import com.gda.kepler.proxy.service.base.KeplerProxyService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -30,8 +27,8 @@ public class SingleVesselPositionsServiceImpl extends KeplerProxyService impleme
     }
 
     // Defines the expected response type for API deserialization.
-    private static final ParameterizedTypeReference<List<SingleVesselPositionModel>> RESPONSE_TYPE =
-        new ParameterizedTypeReference<List<SingleVesselPositionModel>>() {};
+    private static final ParameterizedTypeReference<List<SingleVesselPositionsResponse>> RESPONSE_TYPE =
+        new ParameterizedTypeReference<List<SingleVesselPositionsResponse>>() {};
 
     /**
      * Retrieves the latest available position and voyage information for a single vessel by calling the Kepler API.
@@ -40,8 +37,8 @@ public class SingleVesselPositionsServiceImpl extends KeplerProxyService impleme
      * @return List of vessel position data from the external API.
      */
     @Override
-    public Mono<List<SingleVesselPositionModel>> getSingleVesselPositions(
-        SingleVesselPositionsRequestModel requestModel
+    public Mono<List<SingleVesselPositionsResponse>> getSingleVesselPositions(
+        SingleVesselPositionsRequest requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(ENDPOINT_URL)
             .path(ENDPOINT_URL.replace("{apiKey}", this.marinetrafficApiKey));

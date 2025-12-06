@@ -26,7 +26,7 @@ public class MainController {
     @GetMapping("/license")
     public String returnLicense() {
 
-        return "License.html";
+        return "License";
     }
 
 

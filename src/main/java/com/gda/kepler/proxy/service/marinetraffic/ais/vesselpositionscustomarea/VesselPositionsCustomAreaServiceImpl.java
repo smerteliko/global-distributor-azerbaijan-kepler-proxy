@@ -1,9 +1,7 @@
 package com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositionscustomarea;
 
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositions.VesselPositionsModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositions.VesselPositionsRequestModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositionscustomarea.VesselPositionsCustomAreaModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositionscustomarea.VesselPositionsCustomAreaRequestModel;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestResponse;
 import com.gda.kepler.proxy.service.base.KeplerProxyService;
 import com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositions.VesselPositionsService;
 import org.springframework.core.ParameterizedTypeReference;
@@ -24,8 +22,8 @@ public class VesselPositionsCustomAreaServiceImpl extends KeplerProxyService imp
     private static final String ENDPOINT_PATH = "/exportvessels-custom-area/{apiKey} ";
 
     // Defines the expected response type for API deserialization.
-    private static final ParameterizedTypeReference<VesselPositionsCustomAreaModel> RESPONSE_TYPE =
-        new ParameterizedTypeReference<VesselPositionsCustomAreaModel>() {};
+    private static final ParameterizedTypeReference<VesselPositionsInAnAreaOfInterestResponse> RESPONSE_TYPE =
+        new ParameterizedTypeReference<VesselPositionsInAnAreaOfInterestResponse>() {};
 
     /**
      * Constructor using the base class constructor to initialize WebClients.
@@ -41,14 +39,14 @@ public class VesselPositionsCustomAreaServiceImpl extends KeplerProxyService imp
      * @return Mono emitting the paginated vessel position data from the external API.
      */
     @Override
-    public Mono<VesselPositionsCustomAreaModel> getVesselPositionsCustomArea(
-        VesselPositionsCustomAreaRequestModel requestModel
+    public Mono<VesselPositionsInAnAreaOfInterestResponse> getVesselPositionsCustomArea(
+        VesselPositionsInAnAreaOfInterestRequest requestModel
     ) {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromPath(ENDPOINT_PATH)
             .path(ENDPOINT_PATH.replace("{apiKey}", this.marinetrafficApiKey));
         uriBuilder.queryParam("v", requestModel.getV());
 
-        Optional.ofNullable(requestModel.getVesseltypeid()).ifPresent(vtid -> uriBuilder.queryParam("vesseltypeid", vtid));
+        Optional.ofNullable(requestModel.getVesselTypeId()).ifPresent(vtid -> uriBuilder.queryParam("vesseltypeid", vtid));
         Optional.ofNullable(requestModel.getTimespan()).ifPresent(ts -> uriBuilder.queryParam("timespan", ts));
         Optional.ofNullable(requestModel.getCursor()).ifPresent(c -> uriBuilder.queryParam("cursor", c));
         Optional.ofNullable(requestModel.getLimit()).ifPresent(l -> uriBuilder.queryParam("limit", l));

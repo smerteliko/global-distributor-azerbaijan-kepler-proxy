@@ -1,9 +1,8 @@
 package com.gda.kepler.proxy.service.marinetraffic.ais.singlevessel;
 
-import com.gda.kepler.proxy.model.marinetraffic.ais.singlevessel.SingleVesselPositionModel;
-import com.gda.kepler.proxy.model.marinetraffic.common.BaseVesselPositionDataModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.singlevessel.SingleVesselPositionsRequestModel;
-import com.gda.kepler.proxy.service.base.KeplerProxyService;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessel.SingleVesselPositionsRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessel.SingleVesselPositionsResponse;
+
 import reactor.core.publisher.Mono;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public interface SingleVesselPositionsService {
      * @param requestModel Request model with filtering parameters.
      * @return List of vessel position data.
      */
-    Mono<List<SingleVesselPositionModel>> getSingleVesselPositions(
-        SingleVesselPositionsRequestModel requestModel
+    Mono<List<SingleVesselPositionsResponse>> getSingleVesselPositions(
+        SingleVesselPositionsRequest requestModel
     );
 }

@@ -1,13 +1,12 @@
 package com.gda.kepler.proxy.controller;
 
 import com.gda.kepler.proxy.model.common.KeplerError;
-import com.gda.kepler.proxy.model.marinetraffic.ais.singlevessel.SingleVesselPositionModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.singlevessel.SingleVesselPositionsRequestModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositions.VesselPositionsModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositions.VesselPositionsRequestModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositionscustomarea.VesselPositionsCustomAreaModel;
-import com.gda.kepler.proxy.model.marinetraffic.ais.vesselpositionscustomarea.VesselPositionsCustomAreaRequestModel;
-import com.gda.kepler.proxy.model.marinetraffic.common.BaseVesselPositionDataModel;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessel.SingleVesselPositionsRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessel.SingleVesselPositionsResponse;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels.VesselPositionsRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels.VesselPositionsResponse;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestRequest;
+import com.gda.kepler.proxy.model.marinetraffic.ais.exportvessels_custom_area.VesselPositionsInAnAreaOfInterestResponse;
 import com.gda.kepler.proxy.service.marinetraffic.ais.singlevessel.SingleVesselPositionsService;
 import com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositions.VesselPositionsService;
 import com.gda.kepler.proxy.service.marinetraffic.ais.vesselpositionscustomarea.VesselPositionsCustomAreaService;
@@ -62,8 +61,8 @@ public class MarinTrafficController {
     @Tag(name = "ais.api.tag.name", description = "doc.tag.aisapi.MarineTraffic")
     @Operation(
         operationId = "exportvessel_",
-        summary = "{single.vessel.positions.summary}",
-        description = "{single.vessel.positions.description}",
+        summary = "single.vessel.positions.summary",
+        description = "single.vessel.positions.description",
         parameters = {
         },
         responses = {
@@ -71,13 +70,7 @@ public class MarinTrafficController {
                 responseCode = "200",
                 description = "{successful.response.description}",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
-                    schema = @Schema(implementation = SingleVesselPositionModel[].class))
-            ),
-            @ApiResponse(
-                responseCode = "400",
-                description = "{400.ps07.missing.ship.identifier.description}",
-                content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
-                    schema = @Schema(implementation = KeplerError.class))
+                    schema = @Schema(implementation = SingleVesselPositionsResponse.class))
             ),
             @ApiResponse(
                 responseCode = "429",
@@ -88,9 +81,9 @@ public class MarinTrafficController {
         }
     )
     // IMPORTANT: The trailing space in the path is essential for an exact match with the Kepler/MarineTraffic API.
-    @GetMapping(value = "/exportvessel/{apiKey}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<List<SingleVesselPositionModel>>> getSingleVesselPositions(
-        @ParameterObject SingleVesselPositionsRequestModel requestModel
+    @GetMapping(value = "/exportvessel/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<List<SingleVesselPositionsResponse>>> getSingleVesselPositions(
+        @ParameterObject SingleVesselPositionsRequest requestModel
     ) {
         return singleVesselPositionsService.getSingleVesselPositions(
              requestModel
@@ -104,18 +97,18 @@ public class MarinTrafficController {
      * Tracks vessels of interest anywhere in the world.
      * Corresponds to the /exportvessels/{api_key} endpoint in the AIS Data API (version 9).
      */
+    @Tag(name = "ais.api.tag.name", description = "doc.tag.aisapi.MarineTraffic")
     @Operation(
-        tags = {"ais.api.tag.name"},
         operationId = "exportvessels",
-        summary = "{vessel.positions.summary}",
-        description = "{vessel.positions.description}",
+        summary = "vessel.positions.summary",
+        description = "vessel.positions.description",
 
         responses = {
             @ApiResponse(
                 responseCode = "200",
                 description = "{successful.response.description}",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
-                    schema = @Schema(implementation = VesselPositionsModel.class))
+                    schema = @Schema(implementation = VesselPositionsResponse.class))
             ),
             @ApiResponse(
                 responseCode = "429",
@@ -125,9 +118,9 @@ public class MarinTrafficController {
             )
         }
     )
-    @GetMapping(value = "/exportvessels/{apiKey}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<VesselPositionsModel>> getVesselPositions(
-        @ParameterObject VesselPositionsRequestModel requestModel
+    @GetMapping(value = "/exportvessels/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<VesselPositionsResponse>> getVesselPositions(
+        @ParameterObject VesselPositionsRequest requestModel
     ) {
         return vesselPositionsService.getVesselPositions( requestModel)
             .map(ResponseEntity::ok)
@@ -140,8 +133,8 @@ public class MarinTrafficController {
      * Tracks vessels of interest anywhere in the world.
      * Corresponds to the /exportvessels-custom-area/{api_key} endpoint in the AIS Data API (version 2).
      */
+    @Tag(name = "ais.api.tag.name", description = "doc.tag.aisapi.MarineTraffic")
     @Operation(
-        tags = {"ais.api.tag.name"},
         operationId = "exportvessels-custom-area",
         summary = "{vessel.positions.summary}",
         description = "{vessel.positions.description}",
@@ -151,7 +144,7 @@ public class MarinTrafficController {
                 responseCode = "200",
                 description = "{successful.response.description}",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
-                    schema = @Schema(implementation = VesselPositionsCustomAreaRequestModel.class))
+                    schema = @Schema(implementation = VesselPositionsInAnAreaOfInterestResponse.class))
             ),
             @ApiResponse(
                 responseCode = "429",
@@ -162,8 +155,8 @@ public class MarinTrafficController {
         }
     )
     @GetMapping(value = "/exportvessels-custom-area/{apiKey}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<VesselPositionsCustomAreaModel>> getVesselPositionsCustomArea(
-        @ParameterObject VesselPositionsCustomAreaRequestModel requestModel
+    public Mono<ResponseEntity<VesselPositionsInAnAreaOfInterestResponse>> getVesselPositionsCustomArea(
+        @ParameterObject VesselPositionsInAnAreaOfInterestRequest requestModel
     ) {
         return vesselPositionsCustomAreaService.getVesselPositionsCustomArea( requestModel)
             .map(ResponseEntity::ok)
