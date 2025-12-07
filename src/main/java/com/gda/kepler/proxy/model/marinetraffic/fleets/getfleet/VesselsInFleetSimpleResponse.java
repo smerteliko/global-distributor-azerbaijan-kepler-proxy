@@ -42,7 +42,7 @@ public class VesselsInFleetSimpleResponse {
     /**
      * The Status of the subject vessel (Off = 0, Terrestrial = 1, Satellite = 2 )
      */
-    @Schema(description = "The Status of the subject vessel (Off = 0, Terrestrial = 1, Satellite = 2 )", example = "1")
+    @Schema(description = "property.VESSEL_ACTIVE_STATUS.description", example = "1")
     @JsonProperty("ACTIVE")
     private String active;
 }

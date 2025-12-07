@@ -15,21 +15,21 @@ public class VesselRouteToPortSimpleResponse {
     /**
      * The Distance (in NM) between the specified point or port to the destination port
      */
-    @Schema(description = "The Distance (in NM) between the specified point or port to the destination port", example = "2938")
+    @Schema(description = "property.DISTANCE_PORT.description", example = "2938")
     @JsonProperty("DISTANCE")
     private String distance;
 
     /**
      * Flag to indicate whether the vessel route passes via the Panama canal (0:no, 1:yes)
      */
-    @Schema(description = "Flag to indicate whether the vessel route passes via the Panama canal (0:no, 1:yes)", example = "0")
+    @Schema(description = "property.PANAMA_FLAG.description", example = "0")
     @JsonProperty("PANAMA")
     private String panama;
 
     /**
      * Flag to indicate whether the vessel route passes via the Suez canal (0:no, 1:yes)
      */
-    @Schema(description = "Flag to indicate whether the vessel route passes via the Suez canal (0:no, 1:yes)", example = "0")
+    @Schema(description = "property.SUEZ_FLAG.description", example = "0")
     @JsonProperty("SUEZ")
     private String suez;
 }

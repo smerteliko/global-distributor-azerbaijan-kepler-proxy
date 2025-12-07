@@ -17,14 +17,20 @@ public class BerthCallsRequest {
     /**
      * Version of the service to be executed. Use version 3 to get the latest
      */
-    @Schema(description = "Version of the service to be executed. Use version 3 to get the latest", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
+    @Schema(
+        description = "description.parameter.v.historical",
+        requiredMode = Schema.RequiredMode.REQUIRED,
+        defaultValue = "1",
+        minimum = "1",
+        maximum = "3"
+    )
     @JsonProperty("v")
     private Integer v = 1;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel You can <b>instead</b> use imo or mmsi
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel You can instead use imo or mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.shipid.or.imo.mmsi")
     @JsonProperty("shipid")
     private Integer shipid;
 
@@ -158,7 +164,7 @@ public class BerthCallsRequest {
  * * extended If used with the value <b>extended</b>, the response includes voyage related data since the previous port call
      */
     @Schema(
-        description = "Resolution of the response. If used with the value <b>extended</b>, the response includes voyage related data since the previous port call",
+        description = "description.parameter.msgtype.extended",
         defaultValue = "simple",
         allowableValues = {"extended", "simple"})
     @JsonProperty("msgtype")

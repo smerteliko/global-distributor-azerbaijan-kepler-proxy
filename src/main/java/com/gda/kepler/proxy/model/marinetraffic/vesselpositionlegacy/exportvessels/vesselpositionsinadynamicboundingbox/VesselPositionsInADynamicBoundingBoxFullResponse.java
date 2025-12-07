@@ -192,7 +192,7 @@ public class VesselPositionsInADynamicBoundingBoxFullResponse extends BaseExport
     /**
      * A uniquely assigned ID by United Nations for the Next Port.
      */
-    @Schema(description = "A uniquely assigned ID by United Nations for the Next Port.", example = "GRPIR")
+    @Schema(description = "property.NEXT_PORT_UNLOCODE.description", example = "GRPIR")
     @JsonProperty("NEXT_PORT_UNLOCODE")
     private String next_port_unlocode;
 

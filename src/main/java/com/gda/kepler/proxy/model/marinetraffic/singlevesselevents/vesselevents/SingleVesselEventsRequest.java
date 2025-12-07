@@ -18,7 +18,7 @@ public class SingleVesselEventsRequest {
      * Version of the service to be executed. Use version 2 to get the latest
      */
     @Schema(
-        description = "Version of the service to be executed. Use version 2 to get the latest",
+        description = "description.parameter.v.voyage_forecast",
         requiredMode = Schema.RequiredMode.REQUIRED,
         defaultValue = "1"
     )
@@ -28,7 +28,7 @@ public class SingleVesselEventsRequest {
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel You can <b>instead</b> use imo or mmsi
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel You can instead use imo or mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.shipid.or.imo.mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("shipid")
     private Integer shipid;
 
@@ -97,7 +97,7 @@ public class SingleVesselEventsRequest {
  * * csv 
  * * jsono
      */
-    @Schema(description = "Response type. ",
+    @Schema(description = "protocol.mandatory.description",
         defaultValue = "xml",
         allowableValues = {"csv", "jsono", "xml"}
     )

@@ -29,7 +29,7 @@ public class SingleVesselVoyageForecastExtendedResponse extends BaseVoyageForeca
     /**
      * The Speed of the vessel that MarineTraffic used to produce the ETA_CALC value
      */
-    @Schema(description = "The Speed of the vessel that MarineTraffic used to produce the ETA_CALC value", example = "")
+    @Schema(description = "property.SPEED_CALC.description", example = "")
     @JsonProperty("SPEED_CALC")
     private String speed_calc;
 
@@ -43,21 +43,21 @@ public class SingleVesselVoyageForecastExtendedResponse extends BaseVoyageForeca
     /**
      * The Maximum Draught that has been recorded for the subject vessel
      */
-    @Schema(description = "The Maximum Draught that has been recorded for the subject vessel", example = "105")
+    @Schema(description = "property.DRAUGHT_MAX.description", example = "105")
     @JsonProperty("DRAUGHT_MAX")
     private String draught_max;
 
     /**
      * The Load Condition of the subject vessel (In Ballast, Partially Loaded, Loaded)
      */
-    @Schema(description = "The Load Condition of the subject vessel (In Ballast, Partially Loaded, Loaded)", example = "N/A")
+    @Schema(description = "property.LOAD_STATUS_NAME.description", example = "N/A")
     @JsonProperty("LOAD_STATUS_NAME")
     private String load_status_name;
 
     /**
      * The estimated route of the subject vessel to destination in WKT format
      */
-    @Schema(description = "The estimated route of the subject vessel to destination in WKT format", example = "")
+    @Schema(description = "property.ROUTE_WKT.description", example = "")
     @JsonProperty("ROUTE")
     private String route;
 }

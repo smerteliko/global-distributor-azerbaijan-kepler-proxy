@@ -8,7 +8,6 @@ import java.util.List;
 import lombok.*;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,7 +19,7 @@ public class ModifyFleetResponse {
 
 
     @Data
-    @Builder
+
     @NoArgsConstructor
     @AllArgsConstructor
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,7 +29,7 @@ public class ModifyFleetResponse {
 
 
     @Data
-    @Builder
+
     @NoArgsConstructor
     @AllArgsConstructor
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,14 +37,14 @@ public class ModifyFleetResponse {
         /**
          * Success code
          */
-        @Schema(description = "Success code")
+        @Schema(description = "property.response_code.description")
         @JsonProperty("code")
         private String code;
 
         /**
          * Success message
          */
-        @Schema(description = "Success message")
+        @Schema(description = "property.response_description.descriptioN")
         @JsonProperty("description")
         private String description;
     }

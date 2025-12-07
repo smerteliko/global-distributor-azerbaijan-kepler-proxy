@@ -16,42 +16,47 @@ public class VesselParticularsRequest {
     /**
      * Version of the service to be executed. Use version 5 to get the latest
      */
-    @Schema(description = "v.mta030ad2.description", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
+    @Schema(description = "description.parameter.v.particulars",
+        requiredMode = Schema.RequiredMode.REQUIRED,
+        defaultValue = "1",
+        minimum = "1",
+        maximum = "5"
+    )
     @JsonProperty("v")
     private Integer v = 1;
 
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track (single or comma separated values) You can <b>instead</b> use imo or shipid
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track (single or comma separated values) You can instead use imo or shipid", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.mmsi.multi", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("mmsi")
-    private Integer mmsi;
+    private String mmsi;
 
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track (single or comma separated values)
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track (single or comma separated values)")
+    @Schema(description = "description.parameter.imo", type = "string")
     @JsonProperty("imo")
-    private Integer imo;
+    private String imo;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel (single or comma separated values)
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel (single or comma separated values)")
+    @Schema(description = "description.parameter.shipid")
     @JsonProperty("shipid")
-    private Integer shipid;
+    private String shipid;
 
     /**
      * The timespan parameter defines the period of time, during which we want to receive the change in a vessel's details The maximum value can be either 5 when the interval parameter is set to days or 2880 when the interval is set to minutes
      */
-    @Schema(description = "The timespan parameter defines the period of time, during which we want to receive the change in a vessel's details The maximum value can be either 5 when the interval parameter is set to days or 2880 when the interval is set to minutes")
+    @Schema(description = "description.parameter.timespan")
     @JsonProperty("timespan")
     private Integer timespan;
 
     /**
      * The interval parameter can be either minutes or days
      */
-    @Schema(description = "The interval parameter", defaultValue = "minutes", allowableValues = {"minutes", "days"})
+    @Schema(description = "description.parameter.interval", defaultValue = "minutes", allowableValues = {"minutes", "days"})
     @JsonProperty("interval")
     private String interval = "minutes";
 
@@ -69,7 +74,7 @@ public class VesselParticularsRequest {
     /**
      * Page number of the results to be returned
      */
-    @Schema(description = "Page number of the results to be returned", defaultValue = "1")
+    @Schema(description = "description.parameter.page", defaultValue = "1")
     @JsonProperty("page")
     private Integer page = 1;
 
@@ -78,7 +83,7 @@ public class VesselParticularsRequest {
      * * simple
      * * extended
      */
-    @Schema(description = "Resolution of the response.", defaultValue = "simple", allowableValues = {"extended", "simple"})
+    @Schema(description = "description.parameter.msgtype", defaultValue = "simple", allowableValues = {"extended", "simple"})
     @JsonProperty("msgtype")
     private String msgtype = "simple";
 }

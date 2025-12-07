@@ -15,7 +15,7 @@ public class VesselEtaToPortRequest {
     /**
      * Version of the service to be executed. Use version 2 to get the latest
      */
-    @Schema(description = "Version of the service to be executed. Use version 2 to get the latest", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
+    @Schema(description = "description.parameter.v.voyage_forecast", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
     @JsonProperty("v")
     private Integer v = 1;
 
@@ -68,7 +68,7 @@ public class VesselEtaToPortRequest {
  * * simple 
  * * extended If used with the value <b>extended</b>, the response includes voyage related data
      */
-    @Schema(description = "Resolution of the response. Available values: * simple * extended If used with the value extended, the response includes voyage related data", defaultValue = "simple", allowableValues = {"extended", "simple"})
+    @Schema(description = "description.parameter.msgtype.extended", defaultValue = "simple", allowableValues = {"extended", "simple"})
     @JsonProperty("msgtype")
     private String msgtype = "simple";
 

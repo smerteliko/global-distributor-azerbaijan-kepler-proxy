@@ -17,11 +17,11 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "Base")
 public class BaseExportVesselsResponse {    /**
- * Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station
- */
-@Schema(description = "property.MMSI.description", example = "538006210")
-@JsonProperty("MMSI")
-private String mmsi;
+     * Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station
+     */
+    @Schema(description = "property.MMSI.description", example = "538006210")
+    @JsonProperty("MMSI")
+    private String mmsi;
 
     /**
      * International Maritime Organisation number - a seven-digit number that uniquely identifies vessels

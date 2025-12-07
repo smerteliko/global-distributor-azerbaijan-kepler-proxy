@@ -7,20 +7,26 @@ import lombok.*;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Schema(description = "single.vessel.positions.request.model.description")
+@Schema(description = "model.request.ais.single.description")
 public class SingleVesselPositionsRequest {
 
     /**
-     * Version of the service to be executed. Use version 5 to get the latest
+     * description.parameter.v.particulars
      */
-    @Schema(description = "v.mta030ad3.description", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "6")
+    @Schema(
+        description = "v.mta030ad3.description",
+        requiredMode = Schema.RequiredMode.REQUIRED,
+        defaultValue = "6",
+        minimum = "1",
+        maximum = "6"
+    )
     @JsonProperty("v")
     private Integer v = 6;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel You can <b>instead</b> use imo or mmsi
      */
-    @Schema(description = "mmsi.description", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.shipid.or.imo.mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("shipid")
     private Integer shipid;
 
@@ -34,14 +40,14 @@ public class SingleVesselPositionsRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track
      */
-    @Schema(description = "ship.id.description")
+    @Schema(description = "description.parameter.mmsi")
     @JsonProperty("mmsi")
-    private Integer mmsi;
+    private Integer[] mmsi;
 
     /**
      * The maximum age, in minutes, of the returned positions. Maximum value is 2880
      */
-    @Schema(description = "timespan.mta030ad.description", defaultValue = "5")
+    @Schema(description = "description.parameter.timespan", defaultValue = "5", maximum = "2880")
     @JsonProperty("timespan")
     private Integer timespan = 5;
 

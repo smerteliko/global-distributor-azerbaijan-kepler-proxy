@@ -19,7 +19,7 @@ public class ExpectedCountryArrivalsRequest {
     /**
      * Version of the service to be executed. Use version 4 to get the latest
      */
-    @Schema(description = "Version of the service to be executed. Use version 4 to get the latest", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
+    @Schema(description = "description.parameter.v.expected_arrivals", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
     @JsonProperty("v")
     private Integer v = 1;
 
@@ -110,7 +110,7 @@ public class ExpectedCountryArrivalsRequest {
  * * simple 
  * * extended If used with the value <b>extended</b>, apart from the ETA information, the response includes main vessel particulars. If omitted, the returned records include only position and ETA reports
      */
-    @Schema(description = "Resolution of the response. Available values: * simple * extended If used with the value extended, apart from the ETA information, the response includes main vessel particulars. If omitted, the returned records include only position and ETA reports", defaultValue = "simple", allowableValues = {"extended", "simple"})
+    @Schema(description = "description.parameter.msgtype.extended", defaultValue = "simple", allowableValues = {"extended", "simple"})
     @JsonProperty("msgtype")
     private String msgtype = "simple";
 

@@ -13,7 +13,7 @@ public class VesselPositionsRequest {
     /**
      * Version of the service to be executed. Use version 8 to get the latest
      */
-    @Schema(description = "Version of the service to be executed. Use version 8 to get the latest", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "9")
+    @Schema(description = "description.parameter.v.legacy.export", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "9")
     @JsonProperty("v")
     private Integer v = 9;
 
@@ -32,15 +32,15 @@ public class VesselPositionsRequest {
     /**
      * The maximum age, in minutes, of the returned positions. Maximum value for terrestrial coverage is 60. Maximum value for satellite coverage is 180
      */
-    @Schema(description = "The maximum age, in minutes, of the returned positions. Maximum value for terrestrial coverage is 60. Maximum value for satellite coverage is 180", defaultValue = "5")
+    @Schema(description = "description.parameter.timespan.export", defaultValue = "5")
     @JsonProperty("timespan")
     private Integer timespan = 5;
 
-    @Schema(description = "The pagination cursor provided in the metadata section of the previous response")
+    @Schema(description = "metadata.cursor.description")
     @JsonProperty("cursor")
     private String cursor;
 
-    @Schema(description = "The limit of vessels per page", minimum ="1000",maximum = "5000", defaultValue = "2000")
+    @Schema(description = "limit.description", minimum ="1000",maximum = "5000", defaultValue = "2000")
     @JsonProperty("cursor")
     private Integer limit = 2000;
 

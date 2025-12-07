@@ -19,21 +19,21 @@ public class BaseVesselHistoricalPositionsRequest {
     /**
      * Version of the service to be executed. Use version 3 to get the latest
      */
-    @Schema(description = "Version of the service to be executed. Use version 3 to get the latest", defaultValue = "1")
+    @Schema(description = "description.parameter.v.historical", defaultValue = "1")
     @JsonProperty("v")
     private Integer v = 1;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel You can <b>instead</b> use imo or mmsi
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel You can instead use imo or mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.shipid.or.imo.mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("shipid")
     private Integer shipid;
 
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track")
+    @Schema(description = "description.parameter.mmsi")
     @JsonProperty("mmsi")
     private Integer mmsi;
 
@@ -79,7 +79,7 @@ public class BaseVesselHistoricalPositionsRequest {
      * * simple
      * * extended If used with the value <b>extended</b>, the response includes also weather data
      */
-    @Schema(description = "Resolution of the response. Available values: * simple * extended If used with the value extended, the response includes also weather data", defaultValue = "simple", allowableValues = {"extended", "simple"})
+    @Schema(description = "description.parameter.msgtype.extended", defaultValue = "simple", allowableValues = {"extended", "simple"})
     @JsonProperty("msgtype")
     private String msgtype = "simple";
 
@@ -90,7 +90,7 @@ public class BaseVesselHistoricalPositionsRequest {
      * * json
      * * jsono
      */
-    @Schema(description = "Response type. ", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
+    @Schema(description = "protocol.mandatory.description", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
     @JsonProperty("protocol")
     private String protocol = "xml";
 }

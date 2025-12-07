@@ -56,203 +56,203 @@ public class SingleVesselPredictiveDestinationsSimpleResponse {
     /**
      * The Managing Company of the subject vessel (null if the Owner and the Manager are the same)
      */
-    @Schema(description = "The Managing Company of the subject vessel (null if the Owner and the Manager are the same)", example = "EMPIRE BULKERS")
+    @Schema(description = "property.MANAGER.description", example = "EMPIRE BULKERS")
     @JsonProperty("MANAGER")
     private String manager;
 
     /**
      * The Owning Company of the subject vessel (null if the Owner and the Manager are the same)
      */
-    @Schema(description = "The Owning Company of the subject vessel (null if the Owner and the Manager are the same)", example = "BANK OF AMERICA LEASING AND CAPITAL")
+    @Schema(description = "property.OWNER.description", example = "BANK OF AMERICA LEASING AND CAPITAL")
     @JsonProperty("OWNER")
     private String owner;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the port that was used as origin to retrieve possible destinations
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the port that was used as origin to retrieve possible destinations", example = "257")
+    @Schema(description = "property.FROM_PORT_ID.description", example = "257")
     @JsonProperty("FROM_PORT_ID")
     private String from_port_id;
 
     /**
      * The port that was used as origin to retrieve possible destinations
      */
-    @Schema(description = "The port that was used as origin to retrieve possible destinations", example = "ARATU")
+    @Schema(description = "property.FROM_PORT.description", example = "ARATU")
     @JsonProperty("FROM_PORT")
     private String from_port;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the most probable destination port from the given port of origin
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the most probable destination port from the given port of origin", example = "5018")
+    @Schema(description = "property.NEXT_PORT_N_ID.description", example = "5018")
     @JsonProperty("NEXT_PORT_1_ID")
     private String next_port_1_id;
 
     /**
      * Most probable destination port from the given port of origin
      */
-    @Schema(description = "Most probable destination port from the given port of origin", example = "FORTALEZA")
+    @Schema(description = "property.NEXT_PORT_N_NAME.description", example = "FORTALEZA")
     @JsonProperty("NEXT_PORT_1")
     private String next_port_1;
 
     /**
      * The probability of visiting the most likely destination port
      */
-    @Schema(description = "The probability of visiting the most likely destination port", example = "0.400")
+    @Schema(description = "property.NEXT_PORT_N_PROB.description", example = "0.400")
     @JsonProperty("NEXT_PORT_1_PROB")
     private String next_port_1_prob;
 
     /**
      * The area where the most probable port is
      */
-    @Schema(description = "The area where the most probable port is", example = "ECSA")
+    @Schema(description = "property.NEXT_AREA_N_NAME.description", example = "ECSA")
     @JsonProperty("NEXT_AREA_1")
     private String next_area_1;
 
     /**
      * The probability of visiting the area where the predicted port is
      */
-    @Schema(description = "The probability of visiting the area where the predicted port is", example = "1.000")
+    @Schema(description = "property.NEXT_AREA_N_PROB.description", example = "1.000")
     @JsonProperty("NEXT_AREA_1_PROB")
     private String next_area_1_prob;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the second most probable destination port from the given port of origin
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the second most probable destination port from the given port of origin", example = "5026")
+    @Schema(description = "property.NEXT_PORT_N_ID.description", example = "5026")
     @JsonProperty("NEXT_PORT_2_ID")
     private String next_port_2_id;
 
     /**
      * Second most probable destination port from the given port of origin
      */
-    @Schema(description = "Second most probable destination port from the given port of origin", example = "RECIFE")
+    @Schema(description = "property.NEXT_PORT_N_NAME.description", example = "RECIFE")
     @JsonProperty("NEXT_PORT_2")
     private String next_port_2;
 
     /**
      * The probability of visiting the second most likely destination port
      */
-    @Schema(description = "The probability of visiting the second most likely destination port", example = "0.200")
+    @Schema(description = "property.NEXT_PORT_N_PROB.description", example = "0.200")
     @JsonProperty("NEXT_PORT_2_PROB")
     private String next_port_2_prob;
 
     /**
      * The area where the second most probable port is
      */
-    @Schema(description = "The area where the second most probable port is", example = "ECSA")
+    @Schema(description = "property.NEXT_AREA_N_NAME.description", example = "ECSA")
     @JsonProperty("NEXT_AREA_2")
     private String next_area_2;
 
     /**
      * The probability of visiting the area where the predicted port is
      */
-    @Schema(description = "The probability of visiting the area where the predicted port is", example = "1.000")
+    @Schema(description = "property.NEXT_AREA_N_PROB.description", example = "1.000")
     @JsonProperty("NEXT_AREA_2_PROB")
     private String next_area_2_prob;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the third most probable destination port from the given port of origin
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the third most probable destination port from the given port of origin", example = "645")
+    @Schema(description = "property.NEXT_PORT_N_ID.description", example = "645")
     @JsonProperty("NEXT_PORT_3_ID")
     private String next_port_3_id;
 
     /**
      * Third most probable destination port from the given port of origin
      */
-    @Schema(description = "Third most probable destination port from the given port of origin", example = "VITORIA")
+    @Schema(description = "property.NEXT_PORT_N_NAME.description", example = "VITORIA")
     @JsonProperty("NEXT_PORT_3")
     private String next_port_3;
 
     /**
      * The probability of visiting the third most likely destination port
      */
-    @Schema(description = "The probability of visiting the third most likely destination port", example = "0.200")
+    @Schema(description = "property.NEXT_PORT_N_PROB.description", example = "0.200")
     @JsonProperty("NEXT_PORT_3_PROB")
     private String next_port_3_prob;
 
     /**
      * The area where the third most probable port is
      */
-    @Schema(description = "The area where the third most probable port is", example = "ECSA")
+    @Schema(description = "property.NEXT_AREA_N_NAME.description", example = "ECSA")
     @JsonProperty("NEXT_AREA_3")
     private String next_area_3;
 
     /**
      * The probability of visiting the area where the predicted port is
      */
-    @Schema(description = "The probability of visiting the area where the predicted port is", example = "1.000")
+    @Schema(description = "property.NEXT_AREA_N_PROB.description", example = "1.000")
     @JsonProperty("NEXT_AREA_3_PROB")
     private String next_area_3_prob;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the fourth most probable destination port from the given port of origin
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the fourth most probable destination port from the given port of origin", example = "2479")
+    @Schema(description = "property.NEXT_PORT_N_ID.description", example = "2479")
     @JsonProperty("NEXT_PORT_4_ID")
     private String next_port_4_id;
 
     /**
      * Fourth most probable destination port from the given port of origin
      */
-    @Schema(description = "Fourth most probable destination port from the given port of origin", example = "CABEDELO")
+    @Schema(description = "property.NEXT_PORT_N_NAME.description", example = "CABEDELO")
     @JsonProperty("NEXT_PORT_4")
     private String next_port_4;
 
     /**
      * The probability of visiting the fourth most likely destination port
      */
-    @Schema(description = "The probability of visiting the fourth most likely destination port", example = "0.200")
+    @Schema(description = "property.NEXT_PORT_N_PROB.description", example = "0.200")
     @JsonProperty("NEXT_PORT_4_PROB")
     private String next_port_4_prob;
 
     /**
      * The area where the fourth most probable port is
      */
-    @Schema(description = "The area where the fourth most probable port is", example = "ECSA")
+    @Schema(description = "property.NEXT_AREA_N_NAME.description", example = "ECSA")
     @JsonProperty("NEXT_AREA_4")
     private String next_area_4;
 
     /**
      * The probability of visiting the area where the predicted port is
      */
-    @Schema(description = "The probability of visiting the area where the predicted port is", example = "1.000")
+    @Schema(description = "property.NEXT_AREA_N_PROB.description", example = "1.000")
     @JsonProperty("NEXT_AREA_4_PROB")
     private String next_area_4_prob;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the fifth most probable destination port from the given port of origin
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the fifth most probable destination port from the given port of origin", example = "")
+    @Schema(description = "property.NEXT_PORT_N_ID.description", example = "")
     @JsonProperty("NEXT_PORT_5_ID")
     private String next_port_5_id;
 
     /**
      * Fifth most probable destination port from the given port of origin
      */
-    @Schema(description = "Fifth most probable destination port from the given port of origin", example = "")
+    @Schema(description = "property.NEXT_PORT_N_NAME.description", example = "")
     @JsonProperty("NEXT_PORT_5")
     private String next_port_5;
 
     /**
      * The probability of visiting the fifith most likely destination port
      */
-    @Schema(description = "The probability of visiting the fifith most likely destination port", example = "")
+    @Schema(description = "property.NEXT_PORT_N_PROB.description", example = "")
     @JsonProperty("NEXT_PORT_5_PROB")
     private String next_port_5_prob;
 
     /**
      * The area where the fifth most probable port is
      */
-    @Schema(description = "The area where the fifth most probable port is", example = "")
+    @Schema(description = "property.NEXT_AREA_N_NAME.description", example = "")
     @JsonProperty("NEXT_AREA_5")
     private String next_area_5;
 
     /**
      * The probability of visiting the area where the predicted port is
      */
-    @Schema(description = "The probability of visiting the area where the predicted port is", example = "")
+    @Schema(description = "property.NEXT_AREA_N_PROB.description", example = "")
     @JsonProperty("NEXT_AREA_5_PROB")
     private String next_area_5_prob;
 }

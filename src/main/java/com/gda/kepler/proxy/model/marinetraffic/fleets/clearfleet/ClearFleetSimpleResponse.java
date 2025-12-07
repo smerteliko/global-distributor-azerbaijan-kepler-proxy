@@ -14,14 +14,14 @@ public class ClearFleetSimpleResponse {
     /**
      * The fleet_id you wish to clear
      */
-    @Schema(description = "The fleet_id you wish to clear", example = "1716163")
+    @Schema(description = "property.FLEET_ID.description", example = "1716163")
     @JsonProperty("FLEET_ID")
     private String fleet_id;
 
     /**
      * Indicates whether the vessels were successfully deleted from a fleet (0:no, 1:yes)
      */
-    @Schema(description = "Indicates whether the vessels were successfully deleted from a fleet (0:no, 1:yes)", example = "1")
+    @Schema(description = "property.DELETE_FLAG.description", example = "1")
     @JsonProperty("DELETE")
     private String delete;
 }

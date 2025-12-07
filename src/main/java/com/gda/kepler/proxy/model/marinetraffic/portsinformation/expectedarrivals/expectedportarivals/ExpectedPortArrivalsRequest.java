@@ -18,7 +18,7 @@ public class ExpectedPortArrivalsRequest {
     /**
      * Version of the service to be executed. Use version 4 to get the latest
      */
-    @Schema(description = "Version of the service to be executed. Use version 4 to get the latest", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
+    @Schema(description = "description.parameter.v.expected_arrivals", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
     @JsonProperty("v")
     private Integer v = 1;
 
@@ -32,7 +32,11 @@ public class ExpectedPortArrivalsRequest {
     /**
      * Number of days in the future to look for expected arrivals, starting from the time the API call is requested Maximum value is 40 days If neither this nor the fromdate/todate parameters are used, the response only includes vessels currently in port (or the country’s ports) and the last vessel's signal is received during the last 2 days
      */
-    @Schema(description = "Number of days in the future to look for expected arrivals, starting from the time the API call is requested Maximum value is 40 days If neither this nor the fromdate/todate parameters are used, the response only includes vessels currently in port (or the country’s ports) and the last vessel's signal is received during the last 2 days")
+    @Schema(description = "Number of days in the future to look for expected arrivals, starting from the time the API call is requested Maximum value is 40 days If neither this nor the fromdate/todate parameters are used, the response only includes vessels currently in port (or the country’s ports) and the last vessel's signal is received during the last 2 days",
+        maximum = "40",
+        minimum = "1",
+        defaultValue = "2"
+    )
     @JsonProperty("timespan")
     private Integer timespan;
 
@@ -109,7 +113,7 @@ public class ExpectedPortArrivalsRequest {
  * * simple 
  * * extended If used with the value <b>extended</b>, apart from the ETA information, the response includes main vessel particulars. If omitted, the returned records include only position and ETA reports
      */
-    @Schema(description = "Resolution of the response. Available values: * simple * extended If used with the value extended, apart from the ETA information, the response includes main vessel particulars. If omitted, the returned records include only position and ETA reports", defaultValue = "simple", allowableValues = {"extended", "simple"})
+    @Schema(description = "description.parameter.msgtype.extended", defaultValue = "simple", allowableValues = {"extended", "simple"})
     @JsonProperty("msgtype")
     private String msgtype = "simple";
 

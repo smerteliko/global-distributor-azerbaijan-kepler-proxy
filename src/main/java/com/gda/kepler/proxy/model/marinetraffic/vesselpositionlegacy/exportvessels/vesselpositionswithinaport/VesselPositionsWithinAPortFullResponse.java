@@ -192,7 +192,7 @@ public class VesselPositionsWithinAPortFullResponse extends BaseExportVesselsRes
     /**
      * A uniquely assigned ID by United Nations for the Next Port.
      */
-    @Schema(description = "A uniquely assigned ID by United Nations for the Next Port.", example = "NLAMS")
+    @Schema(description = "property.NEXT_PORT_UNLOCODE.description", example = "NLAMS")
     @JsonProperty("NEXT_PORT_UNLOCODE")
     private String next_port_unlocode;
 

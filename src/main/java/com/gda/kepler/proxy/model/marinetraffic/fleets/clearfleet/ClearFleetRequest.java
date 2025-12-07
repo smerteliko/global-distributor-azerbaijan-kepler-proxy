@@ -15,7 +15,7 @@ public class ClearFleetRequest {
     /**
      * The fleet id you wish to clear
      */
-    @Schema(description = "The fleet id you wish to clear", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "property.FLEET_ID.description", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("fleet_id")
     private Integer fleetID;
 }

@@ -18,14 +18,14 @@ public class PortCallsRequest {
     /**
      * Version of the service to be executed. Use version 6 to get the latest
      */
-    @Schema(description = "Version of the service to be executed. Use version 6 to get the latest", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
+    @Schema(description = "description.parameter.v.ais.single", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
     @JsonProperty("v")
     private Integer v = 1;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel You can <b>instead</b> use imo or mmsi
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel You can instead use imo or mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.shipid.or.imo.mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("shipid")
     private Integer shipid;
 
@@ -142,7 +142,7 @@ public class PortCallsRequest {
         If used with the value <b>extended</b>, the response includes voyage related data since the previous port call
      */
     @Schema(
-        description = "Resolution of the response. If used with the value <b> extended</b>, the response includes voyage related data since the previous port call",
+        description = "description.parameter.msgtype.extended",
         defaultValue = "simple",
         allowableValues = {"extended", "simple"}
     )

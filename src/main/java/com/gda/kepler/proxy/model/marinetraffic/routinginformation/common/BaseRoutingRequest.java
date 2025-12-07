@@ -17,7 +17,7 @@ public class BaseRoutingRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track You can <b>instead</b> use imo or shipid
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track You can instead use imo or shipid", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track You can instead use imo or shipid")
     @JsonProperty("mmsi")
     private Integer mmsi;
 
@@ -61,7 +61,7 @@ public class BaseRoutingRequest {
      * * simple
      * * extended If used with the value <b>extended</b>, the response includes also route/waypoints as Linestring Geometry in WKT - Well-Known Text
      */
-    @Schema(description = "Resolution of the response. Available values: * simple * extended If used with the value extended, the response includes also route/waypoints as Linestring Geometry in WKT - Well-Known Text", defaultValue = "simple", allowableValues = {"extended", "simple"})
+    @Schema(description = "description.parameter.msgtype.extended", defaultValue = "simple", allowableValues = {"extended", "simple"})
     @JsonProperty("msgtype")
     private String msgtype = "simple";
 
@@ -72,7 +72,7 @@ public class BaseRoutingRequest {
      * * json
      * * jsono
      */
-    @Schema(description = "Response type. Use one of the following: * xml * csv * json * jsono", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
+    @Schema(description = "protocol.mandatory.description", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
     @JsonProperty("protocol")
     private String protocol = "xml";
 }

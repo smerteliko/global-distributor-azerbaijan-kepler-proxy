@@ -18,7 +18,7 @@ public class SingleVesselBerthCallsRequest {
      * Version of the service to be executed. Use version 3 to get the latest
      */
     @Schema(
-        description = "Version of the service to be executed. Use version 3 to get the latest",
+        description = "description.parameter.v.historical",
         requiredMode = Schema.RequiredMode.REQUIRED,
         defaultValue = "1"
     )
@@ -29,7 +29,7 @@ public class SingleVesselBerthCallsRequest {
      * A uniquely assigned ID by MarineTraffic for the subject vessel You can <b>instead</b> use imo or mmsi
      */
     @Schema(
-        description = "A uniquely assigned ID by MarineTraffic for the subject vessel You can instead use imo or mmsi",
+        description = "description.parameter.shipid.or.imo.mmsi",
         requiredMode = Schema.RequiredMode.REQUIRED
     )
     @JsonProperty("shipid")
@@ -170,7 +170,7 @@ public class SingleVesselBerthCallsRequest {
  * * extended If used with the value <b>extended</b>, the response includes voyage related data since the previous port call
      */
     @Schema(
-        description = "Resolution of the response. Available values: * simple * extended If used with the value extended, the response includes voyage related data since the previous port call",
+        description = "description.parameter.msgtype.extended",
         defaultValue = "simple",
         allowableValues = {"extended", "simple"}
     )

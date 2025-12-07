@@ -15,14 +15,14 @@ public class FleetVoyageForecastRequest {
     /**
      * Version of the service to be executed. Use version 2 to get the latest
      */
-    @Schema(description = "Version of the service to be executed. Use version 2 to get the latest", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
+    @Schema(description = "description.parameter.v.voyage_forecast", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
     @JsonProperty("v")
     private Integer v = 1;
 
     /**
      * The fleet id you wish to receive voyage forecast for
      */
-    @Schema(description = "The fleet id you wish to receive voyage forecast for", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "property.FLEET_ID.description", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("fleet_id")
     private Integer fleetID;
 
@@ -31,7 +31,7 @@ public class FleetVoyageForecastRequest {
  * * simple 
  * * extended If used with the value <b>extended</b>, the response includes voyage related information (eg. distance travelled and to-go, load condition) and the estimated route to the vessel's destination
      */
-    @Schema(description = "Resolution of the response. Available values: * simple * extended If used with the value extended, the response includes voyage related information (eg. distance travelled and to-go, load condition) and the estimated route to the vessel's destination", defaultValue = "simple", allowableValues = {"extended", "simple"})
+    @Schema(description = "description.parameter.msgtype.extended", defaultValue = "simple", allowableValues = {"extended", "simple"})
     @JsonProperty("msgtype")
     private String msgtype = "simple";
 

@@ -16,7 +16,7 @@ public class VesselPhotoRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) or the IMO number of the vessel You can <b>instead</b> use shipid
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) or the IMO number of the vessel You can instead use shipid", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "The Maritime Mobile Service Identity (MMSI) or the IMO number of the vessel You can instead use shipid")
     @JsonProperty("vessel_id")
     private Integer vesselID;
 

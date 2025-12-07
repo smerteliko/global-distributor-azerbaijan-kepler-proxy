@@ -12,7 +12,7 @@ public class ModifyFleetRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to handle, comma separated values supported You can <b>instead</b> use imo or shipid
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to handle, comma separated values supported You can instead use imo or shipid", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(, requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("mmsi")
     private Integer mmsi;
 
