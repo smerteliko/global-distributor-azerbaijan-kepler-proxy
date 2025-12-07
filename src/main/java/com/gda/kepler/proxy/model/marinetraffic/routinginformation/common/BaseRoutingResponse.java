@@ -11,26 +11,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Schema(description = "Simple")
+@Schema(description = "schema.routing_information.base_response.title")
 public class BaseRoutingResponse {
     /**
      * The Distance (in NM) between the specified point or port to the destination port
      */
-    @Schema(description = "The Distance (in NM) between the specified point or port to the destination port", example = "2938")
+    @Schema(description = "property.DISTANCE.description", example = "2938")
     @JsonProperty("DISTANCE")
     private String distance;
 
     /**
      * Flag to indicate whether the vessel route passes via the Panama canal (0:no, 1:yes)
      */
-    @Schema(description = "Flag to indicate whether the vessel route passes via the Panama canal (0:no, 1:yes)", example = "0", allowableValues = {"0","1"})
+    @Schema(description = "property.PANAMA.description", example = "0")
     @JsonProperty("PANAMA")
     private String panama;
 
     /**
      * Flag to indicate whether the vessel route passes via the Suez canal (0:no, 1:yes)
      */
-    @Schema(description = "Flag to indicate whether the vessel route passes via the Suez canal (0:no, 1:yes)", example = "0", allowableValues = {"0","1"})
+    @Schema(description = "property.SUEZ.description", example = "0")
     @JsonProperty("SUEZ")
     private String suez;
 }

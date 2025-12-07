@@ -15,42 +15,42 @@ public class PredictivePortArrivalsSimpleResponse {
     /**
      * International Maritime Organisation number - a seven-digit number that uniquely identifies vessels
      */
-    @Schema(description = "International Maritime Organisation number - a seven-digit number that uniquely identifies vessels", example = "9020340")
+    @Schema(description = "property.IMO.description", example = "9020340")
     @JsonProperty("IMO")
     private String imo;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel", example = "337987")
+    @Schema(description = "property.SHIP_ID.description", example = "337987")
     @JsonProperty("SHIP_ID")
     private String ship_id;
 
     /**
      * Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station
      */
-    @Schema(description = "Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station", example = "271041000")
+    @Schema(description = "property.MMSI.description", example = "271041000")
     @JsonProperty("MMSI")
     private String mmsi;
 
     /**
      * The Shipname of the subject vessel
      */
-    @Schema(description = "The Shipname of the subject vessel", example = "MARTINE A")
+    @Schema(description = "property.SHIPNAME.description", example = "MARTINE A")
     @JsonProperty("SHIPNAME")
     private String shipname;
 
     /**
      * The commercial market segment the subject vessel belongs to
      */
-    @Schema(description = "The commercial market segment the subject vessel belongs to", example = "CONTAINER SHIPS")
+    @Schema(description = "property.MARKET.description", example = "CONTAINER SHIPS")
     @JsonProperty("MARKET")
     private String market;
 
     /**
      * The class of the subject vessel based on vessel type and size
      */
-    @Schema(description = "The class of the subject vessel based on vessel type and size", example = "FEEDER")
+    @Schema(description = "property.SHIPCLASS.description", example = "FEEDER")
     @JsonProperty("SHIPCLASS")
     private String shipclass;
 
@@ -71,7 +71,7 @@ public class PredictivePortArrivalsSimpleResponse {
     /**
      * A uniquely assigned ID by MarineTraffic for the Next Port
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the Next Port", example = "1")
+    @Schema(description = "property.NEXT_PORT_ID.description", example = "1")
     @JsonProperty("NEXT_PORT_ID")
     private String next_port_id;
 

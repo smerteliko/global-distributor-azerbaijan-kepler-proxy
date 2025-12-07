@@ -24,7 +24,7 @@ public class BaseDataResponse {
      * Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station
      */
     @Schema(
-        description = "Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station",
+        description = "property.MMSI.description",
         example = "538003913"
     )
     @JsonProperty("MMSI")
@@ -34,7 +34,7 @@ public class BaseDataResponse {
      * International Maritime Organisation number - a seven-digit number that uniquely identifies vessels
      */
     @Schema(
-        description = "International Maritime Organisation number - a seven-digit number that uniquely identifies vessels",
+        description = "property.IMO.description",
         example = "9470959"
     )
     @JsonProperty("IMO")
@@ -44,7 +44,7 @@ public class BaseDataResponse {
      * A uniquely assigned ID by MarineTraffic for the subject vessel
      */
     @Schema(
-        description = "A uniquely assigned ID by MarineTraffic for the subject vessel",
+        description = "property.SHIP_ID.description",
         example = "713139"
     )
     @JsonProperty("SHIP_ID")
@@ -54,7 +54,7 @@ public class BaseDataResponse {
      * Latitude - a geographic coordinate that specifies the north-south position of the vessel on the Earth's surface
      */
     @Schema(
-        description = "Latitude - a geographic coordinate that specifies the north-south position of the vessel on the Earth's surface",
+        description = "property.LAT.description",
         example = "37.388430"
     )
     @JsonProperty("LAT")
@@ -64,7 +64,7 @@ public class BaseDataResponse {
      * Longitude - a geographic coordinate that specifies the east-west position of the vessel on the Earth's surface
      */
     @Schema(
-        description = "Longitude - a geographic coordinate that specifies the east-west position of the vessel on the Earth's surface",
+        description = "property.LON.description",
         example = "23.871230"
     )
     @JsonProperty("LON")
@@ -74,7 +74,7 @@ public class BaseDataResponse {
      * The speed (in knots x10) that the subject vessel is reporting according to AIS transmissions
      */
     @Schema(
-        description = "The speed (in knots x10) that the subject vessel is reporting according to AIS transmissions",
+        description = "property.SPEED.description",
         example = "6"
     )
     @JsonProperty("SPEED")
@@ -84,7 +84,7 @@ public class BaseDataResponse {
      * The heading (in degrees) that the subject vessel is reporting according to AIS transmissions
      */
     @Schema(
-        description = "The heading (in degrees) that the subject vessel is reporting according to AIS transmissions",
+        description = "property.HEADING.description",
         example = "104"
     )
     @JsonProperty("HEADING")
@@ -94,7 +94,7 @@ public class BaseDataResponse {
      * The course (in degrees) that the subject vessel is reporting according to AIS transmissions
      */
     @Schema(
-        description = "The course (in degrees) that the subject vessel is reporting according to AIS transmissions",
+        description = "property.COURSE.description",
         example = "41"
     )
     @JsonProperty("COURSE")
@@ -104,7 +104,7 @@ public class BaseDataResponse {
      * The AIS Navigational Status of the subject vessel as input by the vessel's crew. There might be discrepancies with the vessel's detail page when vessel speed is near zero (0) knots
      */
     @Schema(
-        description = "The AIS Navigational Status of the subject vessel as input by the vessel's crew. There might be discrepancies with the vessel's detail page when vessel speed is near zero (0) knots",
+        description = "property.STATUS.description",
         example = "0"
     )
     @JsonProperty("STATUS")
@@ -114,7 +114,7 @@ public class BaseDataResponse {
      * The date and time (in UTC) that the subject vessel's position or event was recorded by MarineTraffic
      */
     @Schema(
-        description = "The date and time (in UTC) that the subject vessel's position or event was recorded by MarineTraffic",
+        description = "property.TIMESTAMP.description",
         example = "2020-10-15T12:21:44.000Z"
     )
     @JsonProperty("TIMESTAMP")
@@ -124,7 +124,7 @@ public class BaseDataResponse {
      * Describes whether the transmitted AIS message was received by a terrestrial (TER), satellite (SAT) or roaming (ROAM) AIS antenna.
      */
     @Schema(
-        description = "Describes whether the transmitted AIS message was received by a terrestrial (TER), satellite (SAT) or roaming (ROAM) AIS antenna.",
+        description = "property.DSRC.description",
         example = "TER"
     )
     @JsonProperty("DSRC")
@@ -134,7 +134,7 @@ public class BaseDataResponse {
      * The time slot that the subject vessel uses to transmit information
      */
     @Schema(
-        description = "The time slot that the subject vessel uses to transmit information",
+        description = "property.UTC_SECONDS.description",
         example = "45"
     )
     @JsonProperty("UTC_SECONDS")
@@ -144,7 +144,7 @@ public class BaseDataResponse {
      * Vessel's commercial market
      */
     @Schema(
-        description = "Vessel's commercial market",
+        description = "property.MARKET.description",
         example = "SUPPORTING VESSELS"
     )
     @JsonProperty("MARKET")
@@ -154,7 +154,7 @@ public class BaseDataResponse {
      * The Shipname of the subject vessel
      */
     @Schema(
-        description = "The Shipname of the subject vessel",
+        description = "property.SHIPNAME.description",
         example = "SUNNY STAR"
     )
     @JsonProperty("SHIPNAME")
@@ -165,7 +165,7 @@ public class BaseDataResponse {
      * The Shiptype of the subject vessel according to AIS transmissions
      */
     @Schema(
-        description = "The Shiptype of the subject vessel according to AIS transmissions",
+        description = "property.SHIPTYPE.description",
         example = "89"
     )
     @JsonProperty("SHIPTYPE")
@@ -175,7 +175,7 @@ public class BaseDataResponse {
      * A uniquely designated identifier for the vessel's transmitter station
      */
     @Schema(
-        description = "A uniquely designated identifier for the vessel's transmitter station",
+        description = "property.CALLSIGN.description",
         example = "V7TZ6"
     )
     @JsonProperty("CALLSIGN")
@@ -185,7 +185,7 @@ public class BaseDataResponse {
      * The flag of the subject vessel according to AIS transmissions
      */
     @Schema(
-        description = "The flag of the subject vessel according to AIS transmissions",
+        description = "property.FLAG.description",
         example = "MH"
     )
     @JsonProperty("FLAG")
@@ -195,7 +195,7 @@ public class BaseDataResponse {
      * The overall Length (in metres) of the subject vessel
      */
     @Schema(
-        description = "The overall Length (in metres) of the subject vessel",
+        description = "property.LENGTH.description",
         example = "184"
     )
     @JsonProperty("LENGTH")
@@ -205,7 +205,7 @@ public class BaseDataResponse {
      * The Breadth (in metres) of the subject vessel
      */
     @Schema(
-        description = "The Breadth (in metres) of the subject vessel",
+        description = "property.WIDTH.description",
         example = "27.43"
     )
     @JsonProperty("WIDTH")
@@ -215,7 +215,7 @@ public class BaseDataResponse {
      * Gross Tonnage - unitless measure that calculates the moulded volume of all enclosed spaces of a ship
      */
     @Schema(
-        description = "Gross Tonnage - unitless measure that calculates the moulded volume of all enclosed spaces of a ship",
+        description = "property.GRT.description",
         example = "23313"
     )
     @JsonProperty("GRT")
@@ -225,7 +225,7 @@ public class BaseDataResponse {
      * Deadweight - a measure (in metric tons) of how much weight a vessel can safely carry (excluding the vessel's own weight)
      */
     @Schema(
-        description = "Deadweight - a measure (in metric tons) of how much weight a vessel can safely carry (excluding the vessel's own weight)",
+        description = "property.DWT.description",
         example = "37857"
     )
     @JsonProperty("DWT")
@@ -235,7 +235,7 @@ public class BaseDataResponse {
      * The Draught (in metres x10) of the subject vessel according to the AIS transmissions
      */
     @Schema(
-        description = "The Draught (in metres x10) of the subject vessel according to the AIS transmissions",
+        description = "property.DRAUGHT.description",
         example = "95"
     )
     @JsonProperty("DRAUGHT")
@@ -246,7 +246,7 @@ public class BaseDataResponse {
      * The year that the subject vessel was built
      */
     @Schema(
-        description = "The year that the subject vessel was built",
+        description = "property.YEAR_BUILT.description",
         example = "2010"
     )
     @JsonProperty("YEAR_BUILT")
@@ -256,7 +256,7 @@ public class BaseDataResponse {
      * The vessel's country
      */
     @Schema(
-        description = "The vessel's country",
+        description = "property.SHIP_COUNTRY.description",
         example = "Marshall Is"
     )
     @JsonProperty("SHIP_COUNTRY")
@@ -266,7 +266,7 @@ public class BaseDataResponse {
      * Vessel's class based on commercial market, capacity and/or dimensions
      */
     @Schema(
-        description = "Vessel's class based on commercial market, capacity and/or dimensions",
+        description = "property.SHIP_CLASS.description",
         example = "HANDYSIZE"
     )
     @JsonProperty("SHIP_CLASS")
@@ -276,7 +276,7 @@ public class BaseDataResponse {
      * Rate of Turn
      */
     @Schema(
-        description = "Rate of Turn",
+        description = "property.ROT.description",
         example = "0"
     )
     @JsonProperty("ROT")
@@ -286,7 +286,7 @@ public class BaseDataResponse {
      * The MarineTraffic ship type of the vessel
      */
     @Schema(
-        description = "The MarineTraffic ship type of the vessel",
+        description = "property.TYPE_NAME.description=",
         example = "Oil/Chemical Tanker"
     )
     @JsonProperty("TYPE_NAME")
@@ -297,7 +297,7 @@ public class BaseDataResponse {
      * Further explanation of the SHIPTYPE ID
      */
     @Schema(
-        description = "Further explanation of the SHIPTYPE ID",
+        description = "property.AIS_TYPE_SUMMARY.description",
         example = "Tanker"
     )
     @JsonProperty("AIS_TYPE_SUMMARY")
@@ -307,7 +307,7 @@ public class BaseDataResponse {
      * The Destination of the subject vessel according to the AIS transmissions
      */
     @Schema(
-        description = "The Destination of the subject vessel according to the AIS transmissions",
+        description = "property.DESTINATION.description",
         example = "FOR ORDERS"
     )
     @JsonProperty("DESTINATION")
@@ -317,7 +317,7 @@ public class BaseDataResponse {
      * The Estimated Time of Arrival to Destination of the subject vessel according to the AIS transmissions
      */
     @Schema(
-        description = "The Estimated Time of Arrival to Destination of the subject vessel according to the AIS transmissions",
+        description = "property.ETA.description",
         example = "2020-10-14T12:00:00.000Z"
     )
     @JsonProperty("ETA")
@@ -329,7 +329,7 @@ public class BaseDataResponse {
      * )
      */
     @Schema(
-        description = "The relative distance from the AIS station of the vessel to the foremost of it (front / bow)",
+        description = "property.L_FORE.description",
         example = "5"
     )
     @JsonProperty("L_FORE")
@@ -339,7 +339,7 @@ public class BaseDataResponse {
      * The relative distance from the AIS station of the vessel to the leftmost of it (left side / port)
      */
     @Schema(
-        description = "The relative distance from the AIS station of the vessel to the leftmost of it (left side / port)",
+        description = "property.W_LEFT.description",
         example = "5"
     )
     @JsonProperty("W_LEFT")
@@ -349,7 +349,7 @@ public class BaseDataResponse {
      * The Name of the Last Port the vessel has visited
      */
     @Schema(
-        description = "The Name of the Last Port the vessel has visited",
+        description = "property.LAST_PORT.description",
         example = "AGIOI THEODOROI"
     )
     @JsonProperty("LAST_PORT")
@@ -359,7 +359,7 @@ public class BaseDataResponse {
      * The Date and Time (in UTC) that the subject vessel departed from the Last Port
      */
     @Schema(
-        description = "The Date and Time (in UTC) that the subject vessel departed from the Last Port",
+        description = "property.LAST_PORT_TIME.description",
         example = "2020-10-13T23:39:00.000Z"
     )
     @JsonProperty("LAST_PORT_TIME")
@@ -369,7 +369,7 @@ public class BaseDataResponse {
      * A uniquely assigned ID by MarineTraffic for the Last Port
      */
     @Schema(
-        description = "A uniquely assigned ID by MarineTraffic for the Last Port",
+        description = "property.LAST_PORT_ID.description",
         example = "29"
     )
     @JsonProperty("LAST_PORT_ID")
@@ -379,7 +379,7 @@ public class BaseDataResponse {
      * A uniquely assigned ID by United Nations for the Last Port
      */
     @Schema(
-        description = "A uniquely assigned ID by United Nations for the Last Port",
+        description = "property.LAST_PORT_UNLOCODE.description",
         example = "GRAGT"
     )
     @JsonProperty("LAST_PORT_UNLOCODE")
@@ -389,7 +389,7 @@ public class BaseDataResponse {
      * The Country that the Last Port is located at
      */
     @Schema(
-        description = "The Country that the Last Port is located at",
+        description = "property.LAST_PORT_COUNTRY.description",
         example = "GR"
     )
     @JsonProperty("LAST_PORT_COUNTRY")
@@ -399,7 +399,7 @@ public class BaseDataResponse {
      * The name of the Port the subject vessel is currently in (NULL if the vessel is underway)
      */
     @Schema(
-        description = "The name of the Port the subject vessel is currently in (NULL if the vessel is underway)",
+        description = "property.CURRENT_PORT.description",
         example = ""
     )
     @JsonProperty("CURRENT_PORT")
@@ -409,7 +409,7 @@ public class BaseDataResponse {
      * A uniquely assigned ID by MarineTraffic for the Current Port
      */
     @Schema(
-        description = "A uniquely assigned ID by MarineTraffic for the Current Port",
+        description = "property.CURRENT_PORT_ID.description",
         example = ""
     )
     @JsonProperty("CURRENT_PORT_ID")
@@ -419,7 +419,7 @@ public class BaseDataResponse {
      * A uniquely assigned ID by United Nations for the Current Port
      */
     @Schema(
-        description = "A uniquely assigned ID by United Nations for the Current Port",
+        description = "property.CURRENT_PORT_UNLOCODE.description",
         example = ""
     )
     @JsonProperty("CURRENT_PORT_UNLOCODE")
@@ -429,7 +429,7 @@ public class BaseDataResponse {
      * The Country that the Current Port is located at
      */
     @Schema(
-        description = "The Country that the Current Port is located at",
+        description = "property.CURRENT_PORT_COUNTRY.description",
         example = ""
     )
     @JsonProperty("CURRENT_PORT_COUNTRY")
@@ -439,7 +439,7 @@ public class BaseDataResponse {
      * A uniquely assigned ID by MarineTraffic for the Next Port
      */
     @Schema(
-        description = "A uniquely assigned ID by MarineTraffic for the Next Port",
+        description = "property.NEXT_PORT_ID.description",
         example = ""
     )
     @JsonProperty("NEXT_PORT_ID")
@@ -449,7 +449,7 @@ public class BaseDataResponse {
      * A uniquely assigned ID by United Nations for the Next Port
      */
     @Schema(
-        description = "A uniquely assigned ID by United Nations for the Next Port",
+        description = "property.NEXT_PORT_UNLOCODE.description",
         example = ""
     )
     @JsonProperty("NEXT_PORT_UNLOCODE")
@@ -459,7 +459,7 @@ public class BaseDataResponse {
      * The Name of the Next Port as derived by MarineTraffic based on the subject vessel's reported Destination
      */
     @Schema(
-        description = "The Name of the Next Port as derived by MarineTraffic based on the subject vessel's reported Destination",
+        description = "property.NEXT_PORT_NAME.description",
         example = ""
     )
     @JsonProperty("NEXT_PORT_NAME")
@@ -469,7 +469,7 @@ public class BaseDataResponse {
      * The Country that the Next Port is located at
      */
     @Schema(
-        description = "The Country that the Next Port is located at",
+        description = "property.NEXT_PORT_COUNTRY.description",
         example = ""
     )
     @JsonProperty("NEXT_PORT_COUNTRY")
@@ -479,7 +479,7 @@ public class BaseDataResponse {
      * The Estimated Time of Arrival to Destination of the subject vessel according to the MarineTraffic calculations
      */
     @Schema(
-        description = "The Estimated Time of Arrival to Destination of the subject vessel according to the MarineTraffic calculations",
+        description = "property.ETA_CALC.description",
         example = ""
     )
     @JsonProperty("ETA_CALC")
@@ -489,7 +489,7 @@ public class BaseDataResponse {
      * The date and time (in UTC) that the ETA was calculated by MarineTraffic
      */
     @Schema(
-        description = "The date and time (in UTC) that the ETA was calculated by MarineTraffic",
+        description = "property.ETA_UPDATED.description",
         example = ""
     )
     @JsonProperty("ETA_UPDATED")
@@ -499,7 +499,7 @@ public class BaseDataResponse {
      * The Remaining Distance (in NM) for the subject vessel to reach the reported Destination
      */
     @Schema(
-        description = "The Remaining Distance (in NM) for the subject vessel to reach the reported Destination",
+        description = "property.DISTANCE_TO_GO.description",
         example = "0"
     )
     @JsonProperty("DISTANCE_TO_GO")
@@ -509,7 +509,7 @@ public class BaseDataResponse {
      * The Distance (in NM) that the subject vessel has travelled since departing from Last Port
      */
     @Schema(
-        description = "The Distance (in NM) that the subject vessel has travelled since departing from Last Port",
+        description = "property.DISTANCE_TRAVELLED.description",
         example = "74"
     )
     @JsonProperty("DISTANCE_TRAVELLED")
@@ -519,7 +519,7 @@ public class BaseDataResponse {
      * The average speed calculated for the subject vessel during the latest voyage (port to port)
      */
     @Schema(
-        description = "The average speed calculated for the subject vessel during the latest voyage (port to port)",
+        description = "property.AVG_SPEED.description",
         example = "12.6"
     )
     @JsonProperty("AVG_SPEED")
@@ -529,7 +529,7 @@ public class BaseDataResponse {
      * The maximum speed reported by the subject vessel during the latest voyage (port to port)
      */
     @Schema(
-        description = "The maximum speed reported by the subject vessel during the latest voyage (port to port)",
+        description = "property.MAX_SPEED.description",
         example = "13.2"
     )
     @JsonProperty("MAX_SPEED")

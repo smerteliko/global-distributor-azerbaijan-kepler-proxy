@@ -15,7 +15,7 @@ public class VesselPhotoSimpleResponse {
     /**
      * The URL of the photo.
      */
-    @Schema(description = "The URL of the photo.", example = "https://photos.marinetraffic.com/ais/showphoto.aspx?photoid=534918")
+    @Schema(description = "property.PHOTO_URL.description", example = "https://photos.marinetraffic.com/ais/showphoto.aspx?photoid=534918")
     @JsonProperty("URL")
     private String url;
 }

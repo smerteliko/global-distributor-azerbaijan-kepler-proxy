@@ -45,7 +45,7 @@ public class BerthCallsExtendedResponse extends BaseBirthCallsResponse {
     /**
      * The Distance (in NM) that the subject vessel has travelled since departing from Last Port
      */
-    @Schema(description = "The Distance (in NM) that the subject vessel has travelled since departing from Last Port", example = "2")
+    @Schema(description = "property.DISTANCE_TRAVELLED.description", example = "2")
     @JsonProperty("DISTANCE_TRAVELLED")
     private String distance_travelled;
 
@@ -150,7 +150,7 @@ public class BerthCallsExtendedResponse extends BaseBirthCallsResponse {
     /**
      * The class of the subject vessel based on vessel type and size
      */
-    @Schema(description = "The class of the subject vessel based on vessel type and size")
+    @Schema(description = "property.SHIPCLASS.description")
     @JsonProperty("SHIPCLASS")
     private String shipclass;
 }

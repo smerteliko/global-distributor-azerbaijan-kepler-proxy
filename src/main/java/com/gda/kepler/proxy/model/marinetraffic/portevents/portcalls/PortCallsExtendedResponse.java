@@ -36,7 +36,7 @@ public class PortCallsExtendedResponse extends BasePortCallsResponse {
     /**
      * The Draught (in metres x10) of the subject vessel according to the AIS transmissions
      */
-    @Schema(description = "The Draught (in metres x10) of the subject vessel according to the AIS transmissions", example = "59")
+    @Schema(description = "property.DRAUGHT.description", example = "59")
     @JsonProperty("DRAUGHT")
     private String draught;
 
@@ -64,7 +64,7 @@ public class PortCallsExtendedResponse extends BasePortCallsResponse {
     /**
      * The Distance (in NM) that the subject vessel has travelled since departing from Last Port
      */
-    @Schema(description = "The Distance (in NM) that the subject vessel has travelled since departing from Last Port", example = "0")
+    @Schema(description = "property.DISTANCE_TRAVELLED.description", example = "0")
     @JsonProperty("DISTANCE_TRAVELLED")
     private String distance_travelled;
 
@@ -106,7 +106,7 @@ public class PortCallsExtendedResponse extends BasePortCallsResponse {
     /**
      * The class of the subject vessel based on vessel type and size
      */
-    @Schema(description = "The class of the subject vessel based on vessel type and size")
+    @Schema(description = "property.SHIPCLASS.description")
     @JsonProperty("SHIPCLASS")
     private String shipclass;
 }

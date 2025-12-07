@@ -50,7 +50,7 @@ public class VesselPositionsInAnAreaOfInterestRequest {
      * * csv
      * * jsono
      */
-    @Schema(description = "Response type.", defaultValue = "jsono", allowableValues = {"csv", "jsono",})
+    @Schema(description = "protocol.mandatory.description", defaultValue = "jsono", allowableValues = {"csv", "jsono",})
     @JsonProperty("protocol")
     private String protocol = "jsono";
 }

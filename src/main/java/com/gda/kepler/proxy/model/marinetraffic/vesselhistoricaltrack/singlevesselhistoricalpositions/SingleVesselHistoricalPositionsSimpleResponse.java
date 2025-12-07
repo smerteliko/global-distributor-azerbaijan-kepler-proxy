@@ -9,7 +9,7 @@ import lombok.*;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Schema(description = "Simple")
+@Schema(description = "schema.vessel_track.single.simple_response.title")
 public class SingleVesselHistoricalPositionsSimpleResponse extends BaseVesselHistoricalPositionsResponse {
 
 }

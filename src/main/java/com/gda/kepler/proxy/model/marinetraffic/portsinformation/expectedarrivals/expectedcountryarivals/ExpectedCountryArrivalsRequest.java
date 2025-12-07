@@ -120,7 +120,7 @@ public class ExpectedCountryArrivalsRequest {
  * * csv 
  * * jsono
      */
-    @Schema(description = "Response type. Use one of the following: * xml * csv * jsono", defaultValue = "xml", allowableValues = {"csv", "jsono", "xml"})
+    @Schema(description = "protocol.mandatory.description", defaultValue = "xml", allowableValues = {"csv", "jsono", "xml"})
     @JsonProperty("protocol")
     private String protocol = "xml";
 }

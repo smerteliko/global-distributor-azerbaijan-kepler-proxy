@@ -157,7 +157,7 @@ public class SingleVesselBerthCallsRequest {
  * * jsono
      */
     @Schema(
-        description = "Response type.",
+        description = "protocol.mandatory.description",
         defaultValue = "xml",
         allowableValues = {"csv", "jsono", "xml"}
     )

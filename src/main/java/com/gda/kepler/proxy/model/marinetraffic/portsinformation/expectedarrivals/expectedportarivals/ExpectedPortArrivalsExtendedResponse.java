@@ -18,105 +18,105 @@ public class ExpectedPortArrivalsExtendedResponse {
     /**
      * The Type of the subject vessel
      */
-    @Schema(description = "The Type of the subject vessel", example = "Passenger Ship")
+    @Schema(description = "property.TYPE_NAME.description", example = "Passenger Ship")
     @JsonProperty("TYPE_NAME")
     private String type_name;
 
     /**
      * The Shiptype of the subject vessel according to AIS transmissions
      */
-    @Schema(description = "The Shiptype of the subject vessel according to AIS transmissions", example = "36")
+    @Schema(description = "property.SHIPTYPE.description", example = "36")
     @JsonProperty("SHIPTYPE")
     private String shiptype;
 
     /**
      * A uniquely designated identifier for the vessel's transmitter station
      */
-    @Schema(description = "A uniquely designated identifier for the vessel's transmitter station", example = "9HA2978")
+    @Schema(description = "property.CALLSIGN.description", example = "9HA2978")
     @JsonProperty("CALLSIGN")
     private String callsign;
 
     /**
      * The flag of the subject vessel according to AIS transmissions
      */
-    @Schema(description = "The flag of the subject vessel according to AIS transmissions", example = "MT")
+    @Schema(description = "property.FLAG.description", example = "MT")
     @JsonProperty("FLAG")
     private String flag;
 
     /**
      * The overall Length (in metres) of the subject vessel
      */
-    @Schema(description = "The overall Length (in metres) of the subject vessel", example = "162")
+    @Schema(description = "property.LENGTH.description", example = "162")
     @JsonProperty("LENGTH")
     private String length;
 
     /**
      * The Breadth (in metres) of the subject vessel
      */
-    @Schema(description = "The Breadth (in metres) of the subject vessel", example = "24")
+    @Schema(description = "property.WIDTH.description", example = "24")
     @JsonProperty("WIDTH")
     private String width;
 
     /**
      * The Draught (in metres x10) of the subject vessel according to the AIS transmissions
      */
-    @Schema(description = "The Draught (in metres x10) of the subject vessel according to the AIS transmissions", example = "61")
+    @Schema(description = "property.DRAUGHT.description", example = "61")
     @JsonProperty("DRAUGHT")
     private String draught;
 
     /**
      * Gross Tonnage - unitless measure that calculates the moulded volume of all enclosed spaces of a ship
      */
-    @Schema(description = "Gross Tonnage - unitless measure that calculates the moulded volume of all enclosed spaces of a ship", example = "25611")
+    @Schema(description = "property.GRT.description", example = "25611")
     @JsonProperty("GRT")
     private String grt;
 
     /**
      * Deadweight - a measure (in metric tons) of how much weight a vessel can safely carry (excluding the vessel's own weight)
      */
-    @Schema(description = "Deadweight - a measure (in metric tons) of how much weight a vessel can safely carry (excluding the vessel's own weight)", example = "1703")
+    @Schema(description = "property.DWT.description", example = "1703")
     @JsonProperty("DWT")
     private String dwt;
 
     /**
      * The year that the subject vessel was built
      */
-    @Schema(description = "The year that the subject vessel was built", example = "1980")
+    @Schema(description = "property.YEAR_BUILT.description", example = "1980")
     @JsonProperty("YEAR_BUILT")
     private String year_built;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the Last Port
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the Last Port", example = "17208")
+    @Schema(description = "property.LAST_PORT_ID.description", example = "17208")
     @JsonProperty("LAST_PORT_ID")
     private String last_port_id;
 
     /**
      * The Name of the Last Port the vessel has visited
      */
-    @Schema(description = "The Name of the Last Port the vessel has visited", example = "KUSADASI")
+    @Schema(description = "property.LAST_PORT.description", example = "KUSADASI")
     @JsonProperty("LAST_PORT")
     private String last_port;
 
     /**
      * A uniquely assigned ID by United Nations for the Last Port
      */
-    @Schema(description = "A uniquely assigned ID by United Nations for the Last Port", example = "TRKUS")
+    @Schema(description = "property.LAST_PORT_UNLOCODE.description", example = "TRKUS")
     @JsonProperty("LAST_PORT_UNLOCODE")
     private String last_port_unlocode;
 
     /**
      * The Country that the Last Port is located at
      */
-    @Schema(description = "The Country that the Last Port is located at", example = "TR")
+    @Schema(description = "property.LAST_PORT_COUNTRY.description", example = "TR")
     @JsonProperty("LAST_PORT_COUNTRY")
     private String last_port_country;
 
     /**
      * The Date and Time (in UTC) that the subject vessel departed from the Last Port
      */
-    @Schema(description = "The Date and Time (in UTC) that the subject vessel departed from the Last Port", example = "2020-03-13T17:38:00.000Z")
+    @Schema(description = "property.LAST_PORT_TIME.description", example = "2020-03-13T17:38:00.000Z")
     @JsonProperty("LAST_PORT_TIME")
     private LocalDateTime last_port_time;
 

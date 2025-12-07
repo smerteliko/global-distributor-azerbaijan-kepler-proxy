@@ -17,14 +17,14 @@ public class VesselEtaToPortExtendedResponse extends BaseVesselEtaToPortResponse
     /**
      * The Distance (in NM) that the subject vessel has travelled since departing from Last Port
      */
-    @Schema(description = "The Distance (in NM) that the subject vessel has travelled since departing from Last Port", example = "519")
+    @Schema(description = "property.DISTANCE_TRAVELLED.description", example = "519")
     @JsonProperty("DISTANCE_TRAVELLED")
     private String distance_travelled;
 
     /**
      * The Remaining Distance (in NM) for the subject vessel to reach the reported Destination
      */
-    @Schema(description = "The Remaining Distance (in NM) for the subject vessel to reach the reported Destination", example = "2629")
+    @Schema(description = "property.DISTANCE_TO_GO.description", example = "2629")
     @JsonProperty("DISTANCE_TO_GO")
     private String distance_to_go;
 
@@ -38,7 +38,7 @@ public class VesselEtaToPortExtendedResponse extends BaseVesselEtaToPortResponse
     /**
      * The Draught (in metres x10) of the subject vessel according to the AIS transmissions
      */
-    @Schema(description = "The Draught (in metres x10) of the subject vessel according to the AIS transmissions", example = "93")
+    @Schema(description = "property.DRAUGHT.description", example = "93")
     @JsonProperty("DRAUGHT")
     private String draught;
 
@@ -73,14 +73,14 @@ public class VesselEtaToPortExtendedResponse extends BaseVesselEtaToPortResponse
     /**
      * The median number of days spent at anchorage the previous week
      */
-    @Schema(description = "The median number of days spent at anchorage the previous week", example = "3.4")
+    @Schema(description = "property.TIME_ANCH.description", example = "3.4")
     @JsonProperty("TIME_ANCH")
     private String time_anch;
 
     /**
      * The median number of days spent at port by the selected market/shipclass
      */
-    @Schema(description = "The median number of days spent at port by the selected market/shipclass", example = "6.1")
+    @Schema(description = "property.TIME_PORT.description", example = "6.1")
     @JsonProperty("TIME_PORT")
     private String time_port;
 }

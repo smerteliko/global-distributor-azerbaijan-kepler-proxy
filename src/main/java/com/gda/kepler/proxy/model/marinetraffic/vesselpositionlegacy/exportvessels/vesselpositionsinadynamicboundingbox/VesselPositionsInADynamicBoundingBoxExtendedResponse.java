@@ -21,105 +21,105 @@ public class VesselPositionsInADynamicBoundingBoxExtendedResponse extends BaseEx
     /**
      * The Shipname of the subject vessel
      */
-    @Schema(description = "The Shipname of the subject vessel", example = "CELEBRITY CONSTELLATION")
+    @Schema(description = "property.SHIPNAME.description", example = "CELEBRITY CONSTELLATION")
     @JsonProperty("SHIPNAME")
     private String shipname;
 
     /**
      * The Shiptype of the subject vessel according to AIS transmissions
      */
-    @Schema(description = "The Shiptype of the subject vessel according to AIS transmissions", example = "60")
+    @Schema(description = "property.SHIPTYPE.description", example = "60")
     @JsonProperty("SHIPTYPE")
     private String shiptype;
 
     /**
      * A uniquely designated identifier for the vessel's transmitter station
      */
-    @Schema(description = "A uniquely designated identifier for the vessel's transmitter station", example = "9HJB9")
+    @Schema(description = "property.CALLSIGN.description", example = "9HJB9")
     @JsonProperty("CALLSIGN")
     private String callsign;
 
     /**
      * The flag of the subject vessel according to AIS transmissions
      */
-    @Schema(description = "The flag of the subject vessel according to AIS transmissions", example = "MT")
+    @Schema(description = "property.FLAG.description", example = "MT")
     @JsonProperty("FLAG")
     private String flag;
 
     /**
      * The overall Length (in metres) of the subject vessel
      */
-    @Schema(description = "The overall Length (in metres) of the subject vessel", example = "294")
+    @Schema(description = "property.LENGTH.description", example = "294")
     @JsonProperty("LENGTH")
     private String length;
 
     /**
      * The Breadth (in metres) of the subject vessel
      */
-    @Schema(description = "The Breadth (in metres) of the subject vessel", example = "37.4")
+    @Schema(description = "property.WIDTH.description", example = "37.4")
     @JsonProperty("WIDTH")
     private String width;
 
     /**
      * Gross Tonnage - unitless measure that calculates the moulded volume of all enclosed spaces of a ship
      */
-    @Schema(description = "Gross Tonnage - unitless measure that calculates the moulded volume of all enclosed spaces of a ship", example = "90940")
+    @Schema(description = "property.GRT.description", example = "90940")
     @JsonProperty("GRT")
     private String grt;
 
     /**
      * Deadweight - a measure (in metric tons) of how much weight a vessel can safely carry (excluding the vessel's own weight)
      */
-    @Schema(description = "Deadweight - a measure (in metric tons) of how much weight a vessel can safely carry (excluding the vessel's own weight)", example = "11763")
+    @Schema(description = "property.DWT.description", example = "11763")
     @JsonProperty("DWT")
     private String dwt;
 
     /**
      * The Draught (in metres x10) of the subject vessel according to the AIS transmissions
      */
-    @Schema(description = "The Draught (in metres x10) of the subject vessel according to the AIS transmissions", example = "83")
+    @Schema(description = "property.DRAUGHT.description", example = "83")
     @JsonProperty("DRAUGHT")
     private String draught;
 
     /**
      * The year that the subject vessel was built
      */
-    @Schema(description = "The year that the subject vessel was built", example = "2002")
+    @Schema(description = "property.YEAR_BUILT.description", example = "2002")
     @JsonProperty("YEAR_BUILT")
     private String year_built;
 
     /**
      * Rate of Turn
      */
-    @Schema(description = "Rate of Turn", example = "0")
+    @Schema(description = "property.ROT.description", example = "0")
     @JsonProperty("ROT")
     private String rot;
 
     /**
      * The Type of the subject vessel
      */
-    @Schema(description = "The Type of the subject vessel", example = "Passenger Ship")
+    @Schema(description = "property.TYPE_NAME.description", example = "Passenger Ship")
     @JsonProperty("TYPE_NAME")
     private String type_name;
 
     /**
      * Further explanation of the SHIPTYPE ID
      */
-    @Schema(description = "Further explanation of the SHIPTYPE ID", example = "Passenger")
+    @Schema(description = "property.AIS_TYPE_SUMMARY.description", example = "Passenger")
     @JsonProperty("AIS_TYPE_SUMMARY")
     private String ais_type_summary;
 
     /**
      * The Destination of the subject vessel according to the AIS transmissions
      */
-    @Schema(description = "The Destination of the subject vessel according to the AIS transmissions", example = "PIRAEUS ANCHORAGE")
+    @Schema(description = "property.DESTINATION.description", example = "PIRAEUS ANCHORAGE")
     @JsonProperty("DESTINATION")
     private String destination;
 
     /**
      * The Estimated Time of Arrival to Destination of the subject vessel according to the AIS transmissions
      */
-    @Schema(description = "The Estimated Time of Arrival to Destination of the subject vessel according to the AIS transmissions", example = "2020-10-26T06:00:00.000Z")
+    @Schema(description = "property.ETA.description", example = "2020-10-26T06:00:00.000Z")
     @JsonProperty("ETA")
     private LocalDateTime eta;
 }

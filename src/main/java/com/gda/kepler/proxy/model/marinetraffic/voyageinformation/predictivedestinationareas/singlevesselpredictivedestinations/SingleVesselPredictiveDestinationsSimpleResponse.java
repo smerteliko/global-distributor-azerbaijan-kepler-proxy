@@ -14,42 +14,42 @@ public class SingleVesselPredictiveDestinationsSimpleResponse {
     /**
      * International Maritime Organisation number - a seven-digit number that uniquely identifies vessels
      */
-    @Schema(description = "International Maritime Organisation number - a seven-digit number that uniquely identifies vessels", example = "9450832")
+    @Schema(description = "property.IMO.description", example = "9450832")
     @JsonProperty("IMO")
     private String imo;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel", example = "4615400")
+    @Schema(description = "property.SHIP_ID.description", example = "4615400")
     @JsonProperty("SHIP_ID")
     private String ship_id;
 
     /**
      * Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station
      */
-    @Schema(description = "Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station", example = "538003690")
+    @Schema(description = "property.MMSI.description", example = "538003690")
     @JsonProperty("MMSI")
     private String mmsi;
 
     /**
      * The Shipname of the subject vessel
      */
-    @Schema(description = "The Shipname of the subject vessel", example = "APHRODITE M")
+    @Schema(description = "property.SHIPNAME.description", example = "APHRODITE M")
     @JsonProperty("SHIPNAME")
     private String shipname;
 
     /**
      * The class of the subject vessel based on vessel type and size
      */
-    @Schema(description = "The class of the subject vessel based on vessel type and size", example = "HANDYSIZE")
+    @Schema(description = "property.SHIPCLASS.description", example = "HANDYSIZE")
     @JsonProperty("SHIPCLASS")
     private String shipclass;
 
     /**
      * The commercial market segment the subject vessel belongs to
      */
-    @Schema(description = "The commercial market segment the subject vessel belongs to", example = "DRY BULK")
+    @Schema(description = "property.MARKET.description", example = "DRY BULK")
     @JsonProperty("MARKET")
     private String market;
 

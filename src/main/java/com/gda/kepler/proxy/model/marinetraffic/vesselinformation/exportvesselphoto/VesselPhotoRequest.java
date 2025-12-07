@@ -23,7 +23,7 @@ public class VesselPhotoRequest {
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel")
+    @Schema(description = "property.SHIP_ID.description")
     @JsonProperty("shipid")
     private Integer shipid;
 
@@ -34,7 +34,7 @@ public class VesselPhotoRequest {
  * * json 
  * * jsono
      */
-    @Schema(description = "Response type.", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
+    @Schema(description = "protocol.mandatory.description", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
     @JsonProperty("protocol")
     private String protocol = "xml";
 }

@@ -16,14 +16,14 @@ public class FleetVoyageForecastSimpleResponse extends BaseVoyageForecastRespons
     /**
      * The Distance (in NM) that the subject vessel has travelled since departing from Last Port
      */
-    @Schema(description = "The Distance (in NM) that the subject vessel has travelled since departing from Last Port", example = "201")
+    @Schema(description = "property.DISTANCE_TRAVELLED.description", example = "201")
     @JsonProperty("DISTANCE_TRAVELLED")
     private String distance_travelled;
 
     /**
      * The Remaining Distance (in NM) for the subject vessel to reach the reported Destination
      */
-    @Schema(description = "The Remaining Distance (in NM) for the subject vessel to reach the reported Destination", example = "0")
+    @Schema(description = "property.DISTANCE_TO_GO.description", example = "0")
     @JsonProperty("DISTANCE_TO_GO")
     private String distance_to_go;
 
@@ -37,7 +37,7 @@ public class FleetVoyageForecastSimpleResponse extends BaseVoyageForecastRespons
     /**
      * The Draught (in metres x10) of the subject vessel according to the AIS transmissions
      */
-    @Schema(description = "The Draught (in metres x10) of the subject vessel according to the AIS transmissions", example = "101")
+    @Schema(description = "property.DRAUGHT.description", example = "101")
     @JsonProperty("DRAUGHT")
     private String draught;
 

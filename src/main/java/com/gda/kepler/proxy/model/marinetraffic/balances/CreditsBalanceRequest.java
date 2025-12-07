@@ -6,8 +6,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "Request parameters for: Credits Balance")
 public class CreditsBalanceRequest {

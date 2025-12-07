@@ -29,7 +29,7 @@ public class SingleVesselPredictiveDestinationsRequest {
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel")
+    @Schema(description = "property.SHIP_ID.description")
     @JsonProperty("shipid")
     private Integer shipid;
 

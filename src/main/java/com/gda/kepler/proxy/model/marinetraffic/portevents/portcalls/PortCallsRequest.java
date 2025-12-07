@@ -155,7 +155,7 @@ public class PortCallsRequest {
  * * csv 
  * * jsono
      */
-    @Schema(description = "Response type.", defaultValue = "xml", allowableValues = {"csv", "jsono", "xml"})
+    @Schema(description = "protocol.mandatory.description", defaultValue = "xml", allowableValues = {"csv", "jsono", "xml"})
     @JsonProperty("protocol")
     private String protocol = "xml";
 }

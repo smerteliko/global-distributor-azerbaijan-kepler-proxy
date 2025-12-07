@@ -14,56 +14,56 @@ public class SearchVesselByIdentifierSimpleResponse {
     /**
      * The Shipname of the subject vessel
      */
-    @Schema(description = "The Shipname of the subject vessel", example = "THE QUEEN JACQUELINE")
+    @Schema(description = "property.SHIPNAME.description", example = "THE QUEEN JACQUELINE")
     @JsonProperty("SHIPNAME")
     private String shipname;
 
     /**
      * Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station
      */
-    @Schema(description = "Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station", example = "244740452")
+    @Schema(description = "property.MMSI.description", example = "244740452")
     @JsonProperty("MMSI")
     private String mmsi;
 
     /**
      * International Maritime Organisation number - a seven-digit number that uniquely identifies vessels
      */
-    @Schema(description = "International Maritime Organisation number - a seven-digit number that uniquely identifies vessels", example = "0")
+    @Schema(description = "property.IMO.description", example = "0")
     @JsonProperty("IMO")
     private String imo;
 
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel", example = "639")
+    @Schema(description = "property.SHIP_ID.description", example = "639")
     @JsonProperty("SHIP_ID")
     private String ship_id;
 
     /**
      * A uniquely designated identifier for the vessel's transmitter station
      */
-    @Schema(description = "A uniquely designated identifier for the vessel's transmitter station", example = "PE6545")
+    @Schema(description = "property.CALLSIGN.description", example = "PE6545")
     @JsonProperty("CALLSIGN")
     private String callsign;
 
     /**
      * The Type of the subject vessel
      */
-    @Schema(description = "The Type of the subject vessel", example = "Inland, Ferry")
+    @Schema(description = "property.TYPE_NAME.description", example = "Inland, Ferry")
     @JsonProperty("TYPE_NAME")
     private String type_name;
 
     /**
      * Deadweight - a measure (in metric tons) of how much weight a vessel can safely carry (excluding the vessel's own weight)
      */
-    @Schema(description = "Deadweight - a measure (in metric tons) of how much weight a vessel can safely carry (excluding the vessel's own weight)", example = "")
+    @Schema(description = "property.DWT.description", example = "")
     @JsonProperty("DWT")
     private String dwt;
 
     /**
      * The flag of the subject vessel according to AIS transmissions
      */
-    @Schema(description = "The flag of the subject vessel according to AIS transmissions", example = "NL")
+    @Schema(description = "property.FLAG.description", example = "NL")
     @JsonProperty("FLAG")
     private String flag;
 
@@ -77,14 +77,14 @@ public class SearchVesselByIdentifierSimpleResponse {
     /**
      * The year that the subject vessel was built
      */
-    @Schema(description = "The year that the subject vessel was built", example = "")
+    @Schema(description = "property.YEAR_BUILT.description", example = "")
     @JsonProperty("YEAR_BUILT")
     private String year_built;
 
     /**
      * URL to the Details page of the subject vessel at MarineTraffic
      */
-    @Schema(description = "URL to the Details page of the subject vessel at MarineTraffic", example = "http://www.marinetraffic.com/en/ais/details/ships/shipid:639/mmsi:244740452/vessel:639")
+    @Schema(description = "property.MT_URL.description", example = "http://www.marinetraffic.com/en/ais/details/ships/shipid:639/mmsi:244740452/vessel:639")
     @JsonProperty("MT_URL")
     private String mt_url;
 }

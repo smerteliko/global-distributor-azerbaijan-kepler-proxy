@@ -61,7 +61,7 @@ public class SearchVesselByIdentifierRequest {
  * * json 
  * * jsono
      */
-    @Schema(description = "Response type", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
+    @Schema(description = "protocol.mandatory.description", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
     @JsonProperty("protocol")
     private String protocol = "xml";
 }

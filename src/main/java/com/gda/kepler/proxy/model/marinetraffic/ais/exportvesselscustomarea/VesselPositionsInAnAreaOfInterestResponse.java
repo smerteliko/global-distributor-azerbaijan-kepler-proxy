@@ -14,9 +14,11 @@ import lombok.*;
 @Schema(description = "Default")
 public class VesselPositionsInAnAreaOfInterestResponse {
     @JsonProperty("DATA")
+    @Schema(description = "vessel.positions.data.list.description")
     private List<BaseDataResponse> data;
 
 
     @JsonProperty("METADATA")
+    @Schema(description = "vessel.positions.metadata.description")
     private BaseMetadataResponse metadata;
 }

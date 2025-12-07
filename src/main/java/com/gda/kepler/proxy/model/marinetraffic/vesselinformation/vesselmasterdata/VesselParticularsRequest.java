@@ -9,14 +9,14 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Schema(description = "Request parameters for: Vessel Particulars (Legacy API)")
+@Schema(description = "vessel.particulars.request.model.description")
 public class VesselParticularsRequest {
 
 
     /**
      * Version of the service to be executed. Use version 5 to get the latest
      */
-    @Schema(description = "Version of the service to be executed. Use version 5 to get the latest", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
+    @Schema(description = "v.mta030ad2.description", requiredMode = Schema.RequiredMode.REQUIRED, defaultValue = "1")
     @JsonProperty("v")
     private Integer v = 1;
 
@@ -62,7 +62,7 @@ public class VesselParticularsRequest {
      * * json
      * * jsono
      */
-    @Schema(description = "Response type", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
+    @Schema(description = "protocol.mandatory.description", defaultValue = "xml", allowableValues = {"csv", "json", "jsono", "xml"})
     @JsonProperty("protocol")
     private String protocol = "xml";
 

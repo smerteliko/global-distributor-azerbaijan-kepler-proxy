@@ -14,28 +14,28 @@ public class VesselsInFleetSimpleResponse {
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel", example = "319")
+    @Schema(description = "property.SHIP_ID.description", example = "319")
     @JsonProperty("SHIP_ID")
     private String ship_id;
 
     /**
      * Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station
      */
-    @Schema(description = "Maritime Mobile Service Identity - a nine-digit number sent in digital form over a radio frequency that identifies the vessel's transmitter station", example = "228316700")
+    @Schema(description = "property.MMSI.description", example = "228316700")
     @JsonProperty("MMSI")
     private String mmsi;
 
     /**
      * International Maritime Organisation number - a seven-digit number that uniquely identifies vessels
      */
-    @Schema(description = "International Maritime Organisation number - a seven-digit number that uniquely identifies vessels", example = "9387542")
+    @Schema(description = "property.IMO.description", example = "9387542")
     @JsonProperty("IMO")
     private String imo;
 
     /**
      * The Shipname of the subject vessel
      */
-    @Schema(description = "The Shipname of the subject vessel", example = "KAOMBO NORTE")
+    @Schema(description = "property.SHIPNAME.description", example = "KAOMBO NORTE")
     @JsonProperty("SHIPNAME")
     private String shipname;
 

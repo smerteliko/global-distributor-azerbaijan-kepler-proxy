@@ -13,12 +13,14 @@ import lombok.*;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Schema(description = "Default")
+@Schema(description = "vessel.positions.response.model.description")
 public class VesselPositionsResponse {
     @JsonProperty("DATA")
+    @Schema(description = "vessel.positions.data.list.description")
     private List<BaseDataResponse> data;
 
     @JsonProperty("METADATA")
+    @Schema(description = "vessel.positions.metadata.description")
     private BaseMetadataResponse metadata;
 
 

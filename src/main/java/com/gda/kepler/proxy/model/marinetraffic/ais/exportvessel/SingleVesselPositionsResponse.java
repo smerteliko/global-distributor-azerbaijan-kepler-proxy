@@ -10,6 +10,6 @@ import lombok.*;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Schema(description = "Default")
+@Schema(description = "base.vessel.position.data.model.description")
 public class SingleVesselPositionsResponse extends BaseDataResponse {
 }
