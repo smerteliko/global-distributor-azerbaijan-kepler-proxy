@@ -40,7 +40,7 @@ public class BaseVesselHistoricalPositionsRequest {
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track")
+    @Schema(description = "description.parameter.imo")
     @JsonProperty("imo")
     private Integer imo;
 
@@ -54,14 +54,14 @@ public class BaseVesselHistoricalPositionsRequest {
     /**
      * Use with todate <b>instead</b> of days to get data for a date period
      */
-    @Schema(description = "Use with todate instead of days to get data for a date period")
+    @Schema(description = "description.parameter.fromdate")
     @JsonProperty("fromdate")
     private String fromdate;
 
     /**
      * Use with fromdate <b>instead</b> of days to get data for a date period
      */
-    @Schema(description = "Use with fromdate instead of days to get data for a date period")
+    @Schema(description = "description.parameter.todate")
     @JsonProperty("todate")
     private String todate;
 

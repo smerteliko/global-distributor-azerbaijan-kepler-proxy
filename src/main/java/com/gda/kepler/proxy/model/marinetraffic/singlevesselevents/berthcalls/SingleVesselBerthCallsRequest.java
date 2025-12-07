@@ -38,14 +38,14 @@ public class SingleVesselBerthCallsRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track")
+    @Schema(description = "description.parameter.mmsi")
     @JsonProperty("mmsi")
     private Integer mmsi;
 
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track")
+    @Schema(description = "description.parameter.imo")
     @JsonProperty("imo")
     private Integer imo;
 
@@ -53,7 +53,7 @@ public class SingleVesselBerthCallsRequest {
      * The maximum age, in minutes, of the returned port calls. Maximum value is 2880
      */
     @Schema(
-        description = "The maximum age, in minutes, of the returned port calls",
+        description = "description.parameter.timespan",
         defaultValue = "2",
         maximum = "2880"
     )
@@ -64,7 +64,7 @@ public class SingleVesselBerthCallsRequest {
      * Berth calls between fromdate and todate. Maximum period requested 15 days Date format: YYYY-MM-DD HH:MM:SS.
      */
     @Schema(
-        description = "Berth calls between fromdate and todate. Maximum period requested 15 days Date",
+        description = "description.parameter.fromdate",
         format = "date-time"
     )
     @JsonProperty("fromdate")
@@ -74,7 +74,7 @@ public class SingleVesselBerthCallsRequest {
      * Berth calls between fromdate and todate. Maximum period requested 15 days Date format: YYYY-MM-DD HH:MM:SS
      */
     @Schema(
-        description = "Berth calls between fromdate and todate. Maximum period requested 15 days ",
+        description = "description.parameter.todate",
         format = "date-time"
     )
     @JsonProperty("todate")
@@ -87,7 +87,7 @@ public class SingleVesselBerthCallsRequest {
      * * if defined and ship-class is undefined, return all ship-classes of the specific market
      */
     @Schema(
-        description = "Define market for which you would like to receive berth calls <ul><li> if undefined and ship-class is also undefined, then return all </li><li> if undefined and ship-class is defined, return based on ship-class </li><li> if defined and ship-class is undefined, return all ship-classes of the specific market</li></ul>",
+        description = "description.parameter.market",
         allowableValues = {
             "CONTAINER SHIPS",
             "DRY BREAKBULK",
@@ -110,7 +110,7 @@ public class SingleVesselBerthCallsRequest {
     /**
      * Define ship class of interest - more
      */
-    @Schema(description = "Define ship class of interest")
+    @Schema(description = "description.parameter.shipclass")
     //TODO ВОПРОС ЗАДАТЬ В ПОНЕДЕЛЬНИК
     @JsonProperty("shipclass")
     private Integer shipclass;

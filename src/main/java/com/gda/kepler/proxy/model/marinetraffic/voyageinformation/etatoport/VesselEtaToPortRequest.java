@@ -22,7 +22,7 @@ public class VesselEtaToPortRequest {
     /**
      * The MarineTraffic ID of the port you wish to receive ETA info You can <b>instead</b> use unlocode
      */
-    @Schema(description = "The MarineTraffic ID of the port you wish to receive ETA info You can instead use unlocode", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.port_target_id", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("portid")
     private Integer portid;
 
@@ -36,14 +36,14 @@ public class VesselEtaToPortRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track You can <b>instead</b> use imo or shipid
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track You can instead use imo or shipid", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("mmsi")
     private Integer mmsi;
 
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track")
+    @Schema(description = "description.parameter.imo")
     @JsonProperty("imo")
     private Integer imo;
 

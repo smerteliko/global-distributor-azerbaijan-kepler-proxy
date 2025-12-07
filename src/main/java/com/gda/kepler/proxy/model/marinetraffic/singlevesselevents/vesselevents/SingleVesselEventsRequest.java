@@ -35,14 +35,14 @@ public class SingleVesselEventsRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track")
+    @Schema(description = "description.parameter.mmsi")
     @JsonProperty("mmsi")
     private Integer mmsi;
 
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track")
+    @Schema(description = "description.parameter.imo")
     @JsonProperty("imo")
     private Integer imo;
 
@@ -50,7 +50,7 @@ public class SingleVesselEventsRequest {
      * The maximum age, in minutes, of the returned port calls. Maximum value is 2880
      */
     @Schema(
-        description = "The maximum age, in minutes, of the returned port calls",
+        description = "description.parameter.timespan",
         defaultValue = "60",
         maximum = "2880"
     )
@@ -61,7 +61,7 @@ public class SingleVesselEventsRequest {
      * Vessel Events between fromdate and todate Date format: YYYY-MM-DD HH:MM:SS
      */
     @Schema(
-        description = "Vessel Events between fromdate and todate Date format: YYYY-MM-DD HH:MM:SS",
+        description = "description.parameter.fromdate",
         format = "date-time"
     )
     @JsonProperty("fromdate")
@@ -71,7 +71,7 @@ public class SingleVesselEventsRequest {
      * Vessel Events between fromdate and todate Date format: YYYY-MM-DD HH:MM:SS
      */
     @Schema(
-        description = "Vessel Events between fromdate and todate Date format: YYYY-MM-DD HH:MM:SS",
+        description = "description.parameter.todate",
         format = "date-time"
     )
     @JsonProperty("todate")

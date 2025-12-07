@@ -17,7 +17,7 @@ public class PredictivePortArrivalsRequest {
     /**
      * The MarineTraffic ID of the port you wish to receive probable visits (found on the URL of the respective Port page)
      */
-    @Schema(description = "The MarineTraffic ID of the port you wish to receive probable visits (found on the URL of the respective Port page)", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.port_target_id", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("portid")
     private Integer portid;
 
@@ -28,7 +28,7 @@ public class PredictivePortArrivalsRequest {
  * * If defined and ship-class is undefined, return all ship-classes of the specific market
      */
     @Schema(
-        description = "Define market for which you would like to receive probable visits <ul><li> if undefined and ship-class is also undefined, then return all </li><li> if undefined and ship-class is defined, return based on ship-class </li><li> if defined and ship-class is undefined, return all ship-classes of the specific market</li></ul>",
+        description = "description.parameter.market",
         allowableValues = {
             "CONTAINER SHIPS",
             "DRY BREAKBULK",
@@ -51,14 +51,14 @@ public class PredictivePortArrivalsRequest {
     /**
      * Define ship class of interest - more
      */
-    @Schema(description = "Define ship class of interest - more")
+    @Schema(description = "description.parameter.shipclass")
     @JsonProperty("shipclass")
     private Integer shipclass;
 
     /**
      * Define probability over which you would like to receive probable visits (accepted > 0.3)
      */
-    @Schema(description = "Define probability over which you would like to receive probable visits (accepted > 0.3)", minimum = "0.3")
+    @Schema(description = "description.parameter.probability", minimum = "0.3")
     @JsonProperty("probability")
     private Integer probability;
 

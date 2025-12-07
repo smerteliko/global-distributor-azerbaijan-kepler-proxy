@@ -46,7 +46,7 @@ public class SingleVesselPortCallsExtendedResponse extends BaseSingleVesselPortC
     /**
      * Indicates LOAD/DISCHARGE operations in the subject Port Call event (0 : N/A, 1 : load, 2 : discharge, 3 : both, 4 : none) <b>Available after 2017-10-01 (YYYY-MM-DD)</b>
      */
-    @Schema(description = "Indicates LOAD/DISCHARGE operations in the subject Port Call event (0 : N/A, 1 : load, 2 : discharge, 3 : both, 4 : none) Available after 2017-10-01 (YYYY-MM-DD)", example = "0")
+    @Schema(description = "property.PORT_OPERATION.description")
     @JsonProperty("PORT_OPERATION")
     private String port_operation;
 
@@ -67,28 +67,28 @@ public class SingleVesselPortCallsExtendedResponse extends BaseSingleVesselPortC
     /**
      * Average Maintained Speed (in knots x10) since the last Port Call while steaming at speed > 5 knots - Updated upon Arrival
      */
-    @Schema(description = "Average Maintained Speed (in knots x10) since the last Port Call while steaming at speed > 5 knots - Updated upon Arrival")
+    @Schema(description = "property.VOYAGE_SPEED_AVG.description", example = "166")
     @JsonProperty("VOYAGE_SPEED_AVG")
     private String voyage_speed_avg;
 
     /**
      * Maximum Recorded Speed (in knots x10) since the last Port Call - Updated upon Arrival
      */
-    @Schema(description = "Maximum Recorded Speed (in knots x10) since the last Port Call - Updated upon Arrival")
+    @Schema(description = "property.VOYAGE_SPEED_MAX.description", example = "166")
     @JsonProperty("VOYAGE_SPEED_MAX")
     private String voyage_speed_max;
 
     /**
      * Total time in minutes since the previous Port Call while the vessel stopped or moving at speed < 3 knots - Updated upon Arrival
      */
-    @Schema(description = "Total time in minutes since the previous Port Call while the vessel stopped or moving at speed < 3 knots - Updated upon Arrival")
+    @Schema(description = "property.VOYAGE_IDLE_TIME_MINS.description", example = "0")
     @JsonProperty("VOYAGE_IDLE_TIME_MINS")
     private String voyage_idle_time_mins;
 
     /**
      * Total time of Voyage since the previous Port Call except Anchorages and Canals - Updated upon Arrival
      */
-    @Schema(description = "Total time of Voyage since the previous Port Call except Anchorages and Canals - Updated upon Arrival", example = "672")
+    @Schema(description = "property.ELAPSED_NOANCH.description", example = "3")
     @JsonProperty("ELAPSED_NOANCH")
     private String elapsed_noanch;
 

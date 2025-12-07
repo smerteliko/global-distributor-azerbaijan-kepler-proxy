@@ -17,14 +17,14 @@ public class BaseRoutingRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track You can <b>instead</b> use imo or shipid
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track You can instead use imo or shipid")
+    @Schema(description = "description.parameter.mmsi")
     @JsonProperty("mmsi")
     private Integer mmsi;
 
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track")
+    @Schema(description = "description.parameter.imo")
     @JsonProperty("imo")
     private Integer imo;
 
@@ -38,21 +38,21 @@ public class BaseRoutingRequest {
     /**
      * The MarineTraffic ID of the port you wish to put as target port (found on the URL of the respective Port page) or port UN/LOCODE
      */
-    @Schema(description = "The MarineTraffic ID of the port you wish to put as target port (found on the URL of the respective Port page) or port UN/LOCODE", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.port_target_id", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("port_target_id")
     private Integer portTargetID;
 
     /**
      * Use 1 to search for all available routes regarding the specific journey or 0 to not include alternative routes
      */
-    @Schema(description = "Use 1 to search for all available routes regarding the specific journey or 0 to not include alternative routes")
+    @Schema(description = "description.parameter.include_alternatives")
     @JsonProperty("includealternatives")
     private Integer includealternatives;
 
     /**
      * Use 1 in order to receive routes which include inland waterways or 0 to not include alternative routes
      */
-    @Schema(description = "Use 1 in order to receive routes which include inland waterways or 0 to not include alternative routes")
+    @Schema(description = "description.parameter.include_inland")
     @JsonProperty("includeinland")
     private Integer includeinland;
 

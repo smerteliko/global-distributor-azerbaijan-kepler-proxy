@@ -70,7 +70,7 @@ public class SearchVesselByIdentifierSimpleResponse {
     /**
      * The country of the subject vessel according to AIS transmissions
      */
-    @Schema(description = "The country of the subject vessel according to AIS transmissions", example = "Netherlands")
+    @Schema(description = "property.SHIP_CLASS.description", example = "Netherlands")
     @JsonProperty("COUNTRY")
     private String country;
 

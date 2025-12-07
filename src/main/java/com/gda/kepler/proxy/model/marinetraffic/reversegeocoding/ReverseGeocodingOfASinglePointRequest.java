@@ -16,49 +16,49 @@ public class ReverseGeocodingOfASinglePointRequest {
     /**
      * A latitude/longitude pair that you wish to receive the MarineTraffic areas/assets that intersects with
      */
-    @Schema(description = "A latitude/longitude pair that you wish to receive the MarineTraffic areas/assets that intersects with", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.coordinates", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("coordinates")
     private String coordinates;
 
     /**
      * Maximum distance (in NM) from the given point that should be searched for nearby areas/assets Cannot be greater than 10NM
      */
-    @Schema(description = "Maximum distance (in NM) from the given point that should be searched for nearby areas/assets Cannot be greater than 10NM")
+    @Schema(description = "description.parameter.radius")
     @JsonProperty("radius")
     private Double radius;
 
     /**
      * Flag that indicates if Ports information will be excluded from response in case given point intersects with them (0:no, 1:yes)
      */
-    @Schema(description = "Flag that indicates if Ports information will be excluded from response in case given point intersects with them (0:no, 1:yes)")
+    @Schema(description = "description.parameter.exclude_ports", allowableValues = {"0", "1"})
     @JsonProperty("exclude_ports")
     private Integer excludePorts;
 
     /**
      * Flag that indicates if Berths information will be excluded from response in case given point intersects with them (0:no, 1:yes)
      */
-    @Schema(description = "Flag that indicates if Berths information will be excluded from response in case given point intersects with them (0:no, 1:yes)")
+    @Schema(description = "description.parameter.exclude_berths", allowableValues = {"0", "1"})
     @JsonProperty("exclude_berths")
     private Integer excludeBerths;
 
     /**
      * Flag that indicates if Terminals information will be excluded from response in case given point intersects with them (0:no, 1:yes)
      */
-    @Schema(description = "Flag that indicates if Terminals information will be excluded from response in case given point intersects with them (0:no, 1:yes)")
+    @Schema(description = "description.parameter.exclude_terminals", allowableValues = {"0", "1"})
     @JsonProperty("exclude_terminals")
     private Integer excludeTerminals;
 
     /**
      * Flag that indicates if Standard Areas information will be excluded from response in case given point intersects with them (0:no, 1:yes)
      */
-    @Schema(description = "Flag that indicates if Standard Areas information will be excluded from response in case given point intersects with them (0:no, 1:yes)")
+    @Schema(description = "description.parameter.exclude_standard_areas", allowableValues = {"0", "1"})
     @JsonProperty("exclude_standard_areas")
     private Integer excludeStandardAreas;
 
     /**
      * Flag that indicates if Custom Areas information will be excluded from response in case given point intersects with them (0:no, 1:yes)
      */
-    @Schema(description = "Flag that indicates if Custom Areas information will be excluded from response in case given point intersects with them (0:no, 1:yes)")
+    @Schema(description = "description.parameter.exclude_custom_areas", allowableValues = {"0", "1"})
     @JsonProperty("exclude_custom_areas")
     private Integer excludeCustomAreas;
 

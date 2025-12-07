@@ -15,14 +15,14 @@ public class FleetPredictiveDestinationsRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track You can <b>instead</b> use imo or shipid
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track You can instead use imo or shipid", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "description.parameter.mmsi", requiredMode = Schema.RequiredMode.REQUIRED)
     @JsonProperty("mmsi")
     private Integer mmsi;
 
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track")
+    @Schema(description = "description.parameter.imo")
     @JsonProperty("imo")
     private Integer imo;
 
@@ -36,7 +36,7 @@ public class FleetPredictiveDestinationsRequest {
     /**
      * The MarineTraffic ID of the port you wish to receive a prediction (found on the URL of the respective Port page)
      */
-    @Schema(description = "The MarineTraffic ID of the port you wish to receive a prediction (found on the URL of the respective Port page)")
+    @Schema(description = "description.parameter.port_target_id")
     @JsonProperty("fromportid")
     private Integer fromportid;
 

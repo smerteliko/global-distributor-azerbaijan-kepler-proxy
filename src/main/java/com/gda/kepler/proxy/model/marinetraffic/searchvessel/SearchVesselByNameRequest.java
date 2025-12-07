@@ -21,16 +21,16 @@ public class SearchVesselByNameRequest {
     private Integer shipid;
 
     /**
-     * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track <b>NOTE:</b> Using MMSI may potentially return multiple records as multiple vessels might have transponded the same MMSI
+     * description.parameter.imon <b>NOTE:</b> Using MMSI may potentially return multiple records as multiple vessels might have transponded the same MMSI
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track NOTE: Using MMSI may potentially return multiple records as multiple vessels might have transponded the same MMSI")
+    @Schema(description = "description.parameter.imon")
     @JsonProperty("mmsi")
     private Integer mmsi;
 
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track <b>NOTE:</b> Using IMO may potentially return multiple records as multiple vessels might have transponded the same IMO
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track NOTE: Using IMO may potentially return multiple records as multiple vessels might have transponded the same IMO")
+    @Schema(description = "description.parameter.imo")
     @JsonProperty("imo")
     private Integer imo;
 

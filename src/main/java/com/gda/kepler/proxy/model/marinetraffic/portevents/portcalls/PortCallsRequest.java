@@ -32,14 +32,14 @@ public class PortCallsRequest {
     /**
      * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track")
+    @Schema(description = "description.parameter.imon")
     @JsonProperty("mmsi")
     private Integer mmsi;
 
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track")
+    @Schema(description = "description.parameter.imo")
     @JsonProperty("imo")
     private Integer imo;
 
@@ -47,7 +47,7 @@ public class PortCallsRequest {
      * The maximum age, in minutes, of the returned port calls. Maximum value is 2880
      */
     @Schema(
-        description = "The maximum age, in minutes, of the returned port calls.",
+        description = "description.parameter.timespan",
         defaultValue = "2",
         maximum = "2880"
     )
@@ -72,7 +72,7 @@ public class PortCallsRequest {
      * Portcalls between fromdate and todate. Maximum period requested 190 days Date format: YYYY-MM-DD HH:MM
      */
     @Schema(
-        description = "Portcalls between fromdate and todate. Maximum period requested 190 days" ,
+        description = "description.parameter.fromdate" ,
         format = "date-time"
     )
     @JsonProperty("fromdate")
@@ -82,7 +82,7 @@ public class PortCallsRequest {
      * Portcalls between fromdate and todate. Maximum period requested 190 days Date format: YYYY-MM-DD HH:MM
      */
     @Schema(
-        description = "Portcalls between fromdate and todate. Maximum period requested 190 days",
+        description = "description.parameter.todate",
         format = "date-time"
     )
     @JsonProperty("todate")

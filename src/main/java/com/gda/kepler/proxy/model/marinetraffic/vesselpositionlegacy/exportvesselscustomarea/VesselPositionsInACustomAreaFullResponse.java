@@ -11,7 +11,7 @@ import lombok.*;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Schema(description = "Full")
+@Schema(description = "schema.vessel_positions_custom_area.full.title")
 public class VesselPositionsInACustomAreaFullResponse extends BaseExportVesselsResponse {
     /**
      * The Shipname of the subject vessel

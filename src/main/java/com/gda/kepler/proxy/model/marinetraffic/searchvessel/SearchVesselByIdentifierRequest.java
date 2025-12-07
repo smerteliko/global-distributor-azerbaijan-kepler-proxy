@@ -16,21 +16,20 @@ public class SearchVesselByIdentifierRequest {
     /**
      * A uniquely assigned ID by MarineTraffic for the subject vessel You can <b>instead</b> use  mmsi or imo
      */
-    @Schema(description = "A uniquely assigned ID by MarineTraffic for the subject vessel You can instead use  mmsi or imo", requiredMode = Schema.RequiredMode.REQUIRED)
-    @JsonProperty("shipid")
+    @Schema(description = "description.parameter.shipid.or.imo.mmsi", requiredMode = Schema.RequiredMode.REQUIRED)    @JsonProperty("shipid")
     private Integer shipid;
 
     /**
-     * The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track <b>NOTE:</b> Using MMSI may potentially return multiple records as multiple vessels might have transponded the same MMSI
+     * description.parameter.imon <b>NOTE:</b> Using MMSI may potentially return multiple records as multiple vessels might have transponded the same MMSI
      */
-    @Schema(description = "The Maritime Mobile Service Identity (MMSI) of the vessel you wish to track NOTE: Using MMSI may potentially return multiple records as multiple vessels might have transponded the same MMSI")
+    @Schema(description = "description.parameter.mmsi.note")
     @JsonProperty("mmsi")
     private Integer mmsi;
 
     /**
      * The International Maritime Organization (IMO) number of the vessel you wish to track <b>NOTE:</b> Using IMO may potentially return multiple records as multiple vessels might have transponded the same IMO
      */
-    @Schema(description = "The International Maritime Organization (IMO) number of the vessel you wish to track NOTE: Using IMO may potentially return multiple records as multiple vessels might have transponded the same IMO")
+    @Schema(description = "description.parameter.imo.note")
     @JsonProperty("imo")
     private Integer imo;
 
@@ -42,7 +41,7 @@ public class SearchVesselByIdentifierRequest {
  * * 7: Cargo 
  * * 8: Tanker
      */
-    @Schema(description = "Filter data by vessel type: * 2: Fishing * 4: High Speed Craf * 6: Passenger * 7: Cargo * 8: Tanker", allowableValues = {"2", "4", "6", "7", "8"})
+    @Schema(description = "description.parameter.shiptype", allowableValues = {"2", "4", "6", "7", "8"})
     @JsonProperty("shiptype")
     private Integer shiptype;
 
@@ -50,7 +49,7 @@ public class SearchVesselByIdentifierRequest {
     /**
      * Data filter: AIS Shiptype Find more information here
      */
-    @Schema(description = "Data filter: AIS Shiptype Find more information here")
+    @Schema(description = "description.parameter.type_name_id")
     @JsonProperty("type_name_id")
     private Integer typeNameID;
 
